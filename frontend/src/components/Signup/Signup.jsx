@@ -11,7 +11,7 @@ function Signup() {
               placeholder="type in your email.."/>
             <input type="password"
               placeholder="type in your password.."/>
-            <button className="signup-btn">create account</button>
+            <button className="signup-btn2">create account</button>
         </form>
         
     </div>

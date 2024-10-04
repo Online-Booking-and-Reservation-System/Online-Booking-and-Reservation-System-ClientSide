@@ -1,0 +1,74 @@
+.signin-container{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 230px;
+    padding: 40px;
+    border-radius: 6px;
+    background-color: #ffffff;
+}
+
+.siTop{
+    display: flex;
+    gap: 10px;
+    justify-content: left;
+    color: #2B2B2B;
+    font-size: 12px;
+}
+
+.signin{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 100%;
+}
+
+.si-label{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #5E5E5E;
+}
+
+.signin input{
+    padding-left: 20px;
+    width: 93%;
+    height: 2.3em;
+    border-radius: 4px;
+    border: 1px solid #5E5E5E;
+}
+
+.signin-btn2{
+    background-color: #2B2B2B;
+    color: #F49B33;
+    border: 1px solid #2B2B2B;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all .4s ease;
+}
+
+.signin-btn2:hover{
+    background-color: #F49B33;
+    color: #2B2B2B;
+    border: 1px solid #F49B33;
+}
+
+.si-bottom{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.signup-link{
+    color: #F49B33;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.signup-link:hover{
+    color: #2B2B2B;
+}

@@ -29,22 +29,25 @@
 
 .close-btn{
     font-size: 18px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.close-btn:hover{
+    color: #F49B33;
 }
 
 .signup{
     display: flex;
     flex-direction: column;
     justify-content: left;
-
     width: 100%;
-
 }
 
 .su-label{
     padding-top: 5px;
     padding-bottom: 5px;
     color: #5E5E5E;
-
 }
 
 .signup input{
@@ -108,4 +111,9 @@
     color: #F49B33;
     text-decoration: underline;
     cursor: pointer;
+    transition: all .3s ease;
+}
+
+.signin-link:hover{
+    color: #2B2B2B;
 }

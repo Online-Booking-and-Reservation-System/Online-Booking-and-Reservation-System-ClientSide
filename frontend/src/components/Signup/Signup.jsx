@@ -37,7 +37,7 @@ function Signup({ trigger, closeModal }) {
           <label className='su-label'>Confirm Password</label>
             <input type="password"
               required
-              placeholder="confirm"/>
+              placeholder="******"/>
 
             <button className="signup-btn2">create account</button>
         </form>

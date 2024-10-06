@@ -6,7 +6,8 @@ import flag from '../../../public/Flag_of_Egypt.svg.png';
 
 function Signup({ trigger, closeModal }) {
    return (trigger) ? (
-   <div className='s-popup'> 
+   <div className="popup-overlay">
+     <div className='s-popup'> 
    <div className="signup-container">
       <div className="suTop">
         <span className="close-btn" onClick={closeModal}><FontAwesomeIcon icon={faChevronLeft} /></span>
@@ -47,6 +48,8 @@ function Signup({ trigger, closeModal }) {
           </div>
     </div>
    </div>
+   </div>
+  
    ):"";
 }
 

@@ -8,6 +8,7 @@ import Signin from "../../Signin/Signin";
 function Navbar() {
     const [suButtonPopup, setSuButtonPopup] = useState(false);
     const [siButtonPopup, setSiButtonPopup] = useState(false);
+    const isPopupOpen = suButtonPopup || siButtonPopup;
     return <>
         <nav className="navbar">
             <div className="logo">
@@ -31,21 +32,23 @@ function Navbar() {
                     setSiButtonPopup(true);
                     setSuButtonPopup(false);
                     } }>
-                    <Link to="/signin">Sign In</Link>
+                    <Link to="/">Sign In</Link>
                 </button>
                <button className="nav-btn signup-btn"
                 onClick={ () => {
                     setSuButtonPopup(true);
                     setSiButtonPopup(false);
                     } } >
-                   <Link to="/signup">Sign Up</Link>
+                   <Link to="/">Sign Up</Link>
                </button>
             </div>
 
         </nav>
         <Signup trigger={suButtonPopup} closeModal={() => setSuButtonPopup(false)} />
         <Signin trigger={siButtonPopup} closeModal={() => setSiButtonPopup(false)}/>
-        <Outlet/>
+        <div className={`main-content ${isPopupOpen ? "blurred" : ""}`}>
+        <Outlet />
+        </div>
      </>
 }
 

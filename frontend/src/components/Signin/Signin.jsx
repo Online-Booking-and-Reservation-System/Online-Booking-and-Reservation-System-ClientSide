@@ -5,7 +5,7 @@ import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 function Signin({ trigger, closeModal }) {
    return (trigger) ? (
-       <> 
+       <div className='popup-overlay'> 
           <div className="s-popup">
             <div className="signin-container">
                <div className="siTop">
@@ -29,7 +29,7 @@ function Signin({ trigger, closeModal }) {
                </div>
             </div>
           </div>
-       </>
+       </div>
    ) : "";
 }
 

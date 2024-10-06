@@ -1,0 +1,81 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    padding: 32px 0;
+}
+.restaurants-window{
+    background-color: white;
+    width: 60%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 32px;   
+    color: #5E5E5E;
+}
+.restaurants-window h2{
+    padding-bottom: 16px;
+    border-bottom: 2px solid#ED994C;
+}
+.side-menu{
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.sale{
+    background-image: linear-gradient(to right,#FAFF00,#ED994C);
+    border-radius: 8px;
+    padding: 16px;
+}
+.lil-container{
+    background-color: white;
+    padding: 16px;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+.lil-container li{
+    font-size: 14px;
+    color: #5e5e5eae;
+    padding: 8px 0;
+    border-bottom:1px solid #ed9a4c45;
+    list-style: none;
+}
+.title{
+    color: #5E5E5E;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 12px;
+    border-bottom:1px solid #ED994C;
+}
+.cards-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.card{
+    border-radius: 8px;
+    width: 25%;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: 0.4s;
+    margin: 16px;
+}
+.card img{
+    width: 100%;
+}
+.times{
+    display: flex;
+    justify-content: space-between;
+}
+.times div{
+    background-color: #ED994C;
+    padding: 8px;
+    color: white;
+    border-radius: 4px;
+}
+.card:hover{
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}

@@ -13,7 +13,7 @@ function Navbar() {
         <nav className="navbar">
             <div className="logo">
                 <Link to="/">
-                  <p className="welcome">Welcome to</p>
+                  <p className="welcome">Welcome&nbsp;to</p>
                   <p className="tbooky"> Table<strong>Booky</strong></p>
 
                 </Link>
@@ -22,7 +22,11 @@ function Navbar() {
                 <li className="nav-link">
                     <Link to="/">Home</Link>
                     </li>
-                <li className="nav-link"><Link to="/">Contact Us</Link></li>
+                <li className="nav-link"><Link to="/reservation">your&nbsp;reservations</Link></li>
+                <li className="nav-link"><Link to="/">Contact&nbsp;Us</Link></li>
+                <li className="nav-link"><Link to="/admin">admin</Link></li>
+                <li className="nav-link"><Link to="/superAdmin">Sadmin</Link></li>
+
                 <button className="signout">signout</button>
             </ul>
             <div className="vertical-line"></div>

@@ -6,20 +6,7 @@ import RList from './RList/RList';      // Import RList
 import Profile from './Profile/Profile';  // Import Profile
 
 function Admin() {
-   const location = useLocation();
-
-   const renderComponent = () => {
-      switch (location.pathname) {
-          case '/admin/reservationsTable':
-              return <RTable />;
-          case '/admin/reservationsList':
-              return <RList />;
-          case '/admin/profile':
-              return <Profile />;
-          default:
-              return null; // Return null if no match is found
-      }
-  };
+   
     return (
         <div className="admin-layout">
             <div className="side">

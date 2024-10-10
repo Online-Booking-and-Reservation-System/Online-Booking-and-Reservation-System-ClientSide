@@ -1,25 +1,20 @@
 import './Admin.css';
-import { Link, Outlet } from 'react-router-dom';
-import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import { faTable, faBook, faUser } from '@fortawesome/free-solid-svg-icons';
-
-
+import { Outlet } from 'react-router-dom';
+import Sidebar from '../../components/admin components/SideBar';
 
 function Admin() {
-    return <>
-       <div className="side-bar">
-         <p>
-            <Link><FontAwesomeIcon icon={faTable} /></Link>
-         </p>
-         <p>
-            <Link><FontAwesomeIcon icon={faBook} /></Link>
-         </p>
-         <p>
-            <Link><FontAwesomeIcon icon={faUser} /></Link>
-         </p>
-       </div>
-       <Outlet/>
-    </>
+    return (
+        <div className="admin-layout">
+            
+            <Sidebar />
+
+            {/* Main content area */}
+            <div className="admin-content">
+                <h1>Admin Panel</h1>
+                <Outlet />  
+            </div>
+        </div>
+    );
 }
 
 export default Admin;

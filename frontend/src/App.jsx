@@ -8,6 +8,9 @@
   import Admin from './pages/admin pages/Admin';
   import Reservation from './pages/user pages/Reservation/Reservation';
 import SuperAdmin from './pages/superAdminPages/SuperAdmin';
+import Contact from './components/shared components/Contact Us/Contact';
+import Sidebar from './components/admin components/SideBar';
+import RTable from './pages/admin pages/RTable/RTable';
 
 
   function App() {
@@ -20,9 +23,15 @@ import SuperAdmin from './pages/superAdminPages/SuperAdmin';
               <Route path='/signup' element={<Signup trigger={false}/>}/>
               <Route path='/signin' element={<Signin />}/>
               <Route path='/admin' element={<Admin />}/>
+              <Route path='/contactUs' element={<Contact />}/>
               <Route path='/reservation' element={<Reservation />}/>
               <Route path='/superAdmin' element={<SuperAdmin />}/>
+
+              <Route path="/admin" element={<Admin />}>
+                <Route path="reservationsTable" element={<RTable />} />  
             </Route>
+            </Route>
+
           </Routes>
       </BrowserRouter>
       </>

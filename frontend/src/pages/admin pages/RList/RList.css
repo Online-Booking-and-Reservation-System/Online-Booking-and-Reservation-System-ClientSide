@@ -1,0 +1,18 @@
+.rlist-container {
+    padding: 20px;
+}
+
+.rlist {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.rlist th, .rlist td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+.rlist th {
+    background-color: #f2f2f2;
+}

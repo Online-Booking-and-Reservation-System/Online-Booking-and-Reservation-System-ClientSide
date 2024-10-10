@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const API_URL = "https://online-booking-and-reservation-system-server-side.vercel.app/api";
 
@@ -20,6 +22,7 @@ function Signin({ trigger, closeModal }) {
            console.log('Signed in successfully:', response.data);
        } catch (error) {
            console.error('Error signing in:', error.response?.data || error.message);
+           toast.error('Error signing in, please try again.');
        }
    };
 

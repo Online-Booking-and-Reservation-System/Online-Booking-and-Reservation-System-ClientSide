@@ -7,13 +7,19 @@ function Sidebar() {
     return <> 
       <div className="side-bar">
          <p>
-            <Link to='/admin/reservationsTable'><FontAwesomeIcon icon={faTable} /></Link>
+            <Link to='/admin/reservationsTable'>
+               <FontAwesomeIcon icon={faTable} />
+            </Link>
          </p>
          <p>
-            <Link to='/admin/reservationsList'><FontAwesomeIcon icon={faBook} /></Link>
+            <Link to='/admin/reservationsList'>
+                    <FontAwesomeIcon icon={faBook} />
+            </Link>
          </p>
          <p>
-            <Link to='/admin/Profile'><FontAwesomeIcon icon={faUser} /></Link>
+            <Link to='/admin/profile'>
+                <FontAwesomeIcon icon={faUser} />
+            </Link>
          </p>
        </div>
        <Outlet/>

@@ -5,6 +5,8 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import flag from '../../../public/Flag_of_Egypt.svg.png';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const API_URL = "https://online-booking-and-reservation-system-server-side.vercel.app/api";
 
@@ -18,18 +20,26 @@ function Signup({ trigger, closeModal }) {
     const handleSignup = async (e) => {
       e.preventDefault();
       if (password !== confirmPassword) {
-          return alert('Passwords do not match');
+          toast.error('Passwords do not match');
+          return; 
       }
       try {
-          const response = await axios.post(`${API_URL}api/api/auth/register`, {
+          const response = await axios.post(`${API_URL}/api/api/auth/register`, {
               fullName,
               email,
               phone,
               password,
           });
-          console.log('Signed up successfully:', response.data);
+          const token = response.data.token;
+
+          localStorage.setItem('token', token);
+
+          console.log('Signup successful, token:', token);
+          toast.success('Signup successful!');
+          closeModal(); 
       } catch (error) {
           console.error('Error signing up:', error.response?.data || error.message);
+          toast.error('Error signing up, please try again.');
       }
   };
 
@@ -81,6 +91,7 @@ function Signup({ trigger, closeModal }) {
           </div>
     </div>
    </div>
+   <ToastContainer/>
    </div>
   
    ):"";

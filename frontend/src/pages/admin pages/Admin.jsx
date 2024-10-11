@@ -1,9 +1,9 @@
 import './Admin.css';
 import { Outlet , useLocation} from 'react-router-dom';
 import Sidebar from '../../components/admin components/SideBar';
-import RTable from './RTable/RTable';  // Import RTable
-import RList from './RList/RList';      // Import RList
-import Profile from './Profile/Profile';  // Import Profile
+import RTable from './RTable/RTable';  
+import RList from './RList/RList';      
+import Profile from './Profile/Profile';  
 
 function Admin() {
    
@@ -13,8 +13,6 @@ function Admin() {
             <Sidebar />
             </div>
            
-
-            {/* Main content area */}
             <div className="admin-content">
             <Outlet />
             </div>

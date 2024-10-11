@@ -22,7 +22,6 @@ function Sidebar() {
             </Link>
          </p>
        </div>
-       <Outlet/>
      </>
 }
 

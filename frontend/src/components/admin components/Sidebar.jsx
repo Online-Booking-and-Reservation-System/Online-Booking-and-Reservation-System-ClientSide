@@ -16,11 +16,11 @@ function Sidebar() {
                     <FontAwesomeIcon icon={faBook} />
             </Link>
          </p>
-         <p>
+         {/* <p>
             <Link to='/admin/profile'>
                 <FontAwesomeIcon icon={faUser} />
             </Link>
-         </p>
+         </p> */}
        </div>
      </>
 }

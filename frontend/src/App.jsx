@@ -10,6 +10,8 @@ import Contact from './components/shared components/Contact Us/Contact';
 import RTable from './pages/admin pages/RTable/RTable';
 import RList from './pages/admin pages/RList/RList';  
 import Profile from './pages/admin pages/Profile/Profile';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 
 
@@ -32,6 +34,7 @@ function App() {
                         <Route path='/superAdmin' element={<SuperAdmin />} />
                     </Route>
                 </Routes>
+                <ToastContainer />
             </BrowserRouter>
         </>
     );

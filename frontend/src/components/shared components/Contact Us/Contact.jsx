@@ -29,34 +29,16 @@ function Contact({ trigger, closeModal }) {
                         </span>
                         <h2 className="contact-title">Contact Us</h2>
                     </div>
-                    <form className="contact-form" onSubmit={handleSubmit}>
-                        <label className="contact-label">Full Name</label>
-                        <input
-                            type="text"
-                            required
-                            placeholder="Your Name"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                        />
-                        <label className="contact-label">Email</label>
-                        <input
-                            type="email"
-                            required
-                            placeholder="yourname@example.com"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
-                        <label className="contact-label">Message</label>
-                        <textarea
-                            required
-                            placeholder="Type your message here"
-                            value={message}
-                            onChange={(e) => setMessage(e.target.value)}
-                        />
-                        <button className="contact-submit" type="submit">
-                            Send Message
-                        </button>
-                    </form>
+                    <div className="contact1">
+                        <p className="email-contact">Our Email: </p>
+                        <p className="c-e">
+                             <a href="mailto:tableBooky@gmail.com">tableBooky@gmail.com</a>
+                        </p>
+                    </div>
+                    <div className="contact2">
+                        <p className="hotLine-contact">Our HotLine: </p>
+                        <p className="h-c">181901</p>
+                    </div>
                 </div>
             </div>
 

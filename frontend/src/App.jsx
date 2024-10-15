@@ -12,13 +12,15 @@ import RList from './pages/admin pages/RList/RList';
 import Profile from './pages/admin pages/Profile/Profile';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import AuthProvider from './Context/AuthProvider';
 import './App.css';
 
 
 function App() {
     return (
         <>
-            <BrowserRouter>
+        {/* <AuthProvider> */}
+        <BrowserRouter>
                 <Routes>
                     <Route path='/' element={<Navbar />}>
                         <Route index element={<Home />} />
@@ -36,6 +38,7 @@ function App() {
                 </Routes>
                 <ToastContainer />
             </BrowserRouter>
+        {/* </AuthProvider> */}
         </>
     );
 }

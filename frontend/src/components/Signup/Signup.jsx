@@ -11,7 +11,7 @@ import Verification from './Verification';
 function Signup({ trigger, closeModal }) {
     const [fullName, setFullName] = useState("");
     const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [showVerification, setShowVerification] = useState(false);
@@ -23,25 +23,29 @@ function Signup({ trigger, closeModal }) {
             toast.error('Passwords do not match');
             return;
         }
+        
         try {
             const response = await axios.post('http://localhost:3000/api/auth/register', {
                 fullName,
                 email,
-                phoneNumber: phone,
+                phoneNumber,
                 password,
             });
             console.log('Signup response:', response.data);
             const token = response.data.data; 
             console.log('Token:', token);
             setToken(token); 
+            localStorage.setItem('token', token);
             setShowVerification(true);
             closeModal(); 
-            toast.success('Signup successful! Check your email for the verification code.');
+            toast.success('Check your email for the verification code.');
         } catch (error) {
             console.error('Error signing up:', error.response?.data || error.message);
             toast.error('Error signing up, please try again.');
         }
     };
+    
+    
 
     return (
         <>
@@ -56,11 +60,13 @@ function Signup({ trigger, closeModal }) {
                             <form className="signup" onSubmit={handleSignup}>
                                 <label className='su-label'>Full Name</label>
                                 <input type="text"
+                                    value={fullName}  
                                     required
                                     onChange={(e) => setFullName(e.target.value)}
                                     placeholder="Bob Smith" />
                                 <label className='su-label'>Email</label>
                                 <input type="email"
+                                    value={email}
                                     required
                                     onChange={(e) => setEmail(e.target.value)}
                                     placeholder="bob@gmail.com" />
@@ -68,8 +74,9 @@ function Signup({ trigger, closeModal }) {
                                 <div className="phone">
                                     <img src={flag} alt="iphone" className="flag-img" />
                                     <input type="tel"
+                                        value={phoneNumber}
                                         pattern="^01[0-9]{9}$"
-                                        onChange={(e) => setPhone(e.target.value)}
+                                        onChange={(e) => setPhoneNumber(e.target.value)}
                                         required
                                         placeholder="01#########" />
                                 </div>

@@ -34,7 +34,7 @@ function Navbar() {
                 >
                 <Link to="/">Contact&nbsp;Us</Link>
                 </li>
-                <li className="nav-link"><Link to="/admin">admin</Link></li>
+                <li className="nav-link"><Link to="/admin/reservationsTable">admin</Link></li>
                 <li className="nav-link"><Link to="/superAdmin">Sadmin</Link></li>
 
                 <button className="signout">signout</button>

@@ -34,6 +34,20 @@
     font-size: 12px;
 }
 
+.siTop .si-close-btn{
+    font-size: 19px;
+    cursor: pointer;
+    transition: all .3s ease;
+    border: none;
+    background-color: transparent;
+    color: #2B2B2B;
+    font-weight: bold;
+}
+
+.siTop .si-close-btn:hover{
+     color: #F49B33;
+}
+
 .signin{
     display: flex;
     flex-direction: column;

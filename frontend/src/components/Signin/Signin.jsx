@@ -31,7 +31,7 @@ function Signin({ trigger, closeModal }) {
           <div className="s-popup">
             <div className="signin-container">
                <div className="siTop">
-                  <span className="close-btn" onClick={closeModal}><FontAwesomeIcon icon={faChevronLeft} /></span>
+                  <button className="si-close-btn" onClick={closeModal}><FontAwesomeIcon icon={faChevronLeft} /></button>
                   <h2 className="si">Welcome back</h2>
                </div>
                <form className="signin" onSubmit={handleSignin}>

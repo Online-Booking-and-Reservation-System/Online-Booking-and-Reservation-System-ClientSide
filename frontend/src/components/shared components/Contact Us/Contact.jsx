@@ -24,9 +24,9 @@ function Contact({ trigger, closeModal }) {
             <div className="c-popup">
             <div className="contact-container">
                     <div className="contact-header">
-                        <span className="close-btn" onClick={closeModal}>
+                        <button className="contact-close-btn" onClick={closeModal}>
                             <FontAwesomeIcon icon={faChevronLeft} />
-                        </span>
+                        </button>
                         <h2 className="contact-title">Contact Us</h2>
                     </div>
                     <div className="contact1">

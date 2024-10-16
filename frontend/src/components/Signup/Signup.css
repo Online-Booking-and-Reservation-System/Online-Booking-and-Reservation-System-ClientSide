@@ -188,10 +188,7 @@
     margin-bottom: 1rem;
 }
 
-.signup input::placeholder,
-.phone input::placeholder {
-  padding-left: 2em;
-}
+
 
 /* Phone input and flag */
 .phone {

@@ -22,9 +22,25 @@
     display: flex;
     gap: 10px;
     justify-content: left;
+    align-items: center;
     color: #2B2B2B;
-    font-size: 12px;
+    font-size: 16px;
 }
+
+.contact-header .contact-close-btn{
+    font-size: 16px;
+    cursor: pointer;
+    transition: all .3s ease;
+    border: none;
+    background-color: transparent;
+    color: #2B2B2B;
+    font-weight: bold;
+}
+
+.contact-header .contact-close-btn:hover{
+    color: #F49B33;
+}
+
 
 .contact1 , .contact2{
     display: flex;

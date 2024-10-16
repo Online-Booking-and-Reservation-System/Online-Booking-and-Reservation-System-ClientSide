@@ -9,28 +9,28 @@ function Verification({ token, closeVerification }) {
     const [verificationMessage, setVerificationMessage] = useState('');
 
     // Check token expiration
-    // const isTokenExpired = (token) => {
-    //     try {
-    //         const decodedToken = JSON.parse(atob(token.split('.')[1])); 
-    //         const now = Math.floor(Date.now() / 1000); 
-    //         console.log("Decoded Token:", decodedToken); 
-    //         console.log("Current Time:", now, "Token Expiry Time:", decodedToken.exp); 
-    //         return decodedToken.exp < now;
-    //     } catch (error) {
-    //         console.error("Error decoding token:", error); 
-    //         return true; 
-    //     }
-    // };
+    const isTokenExpired = (token) => {
+        try {
+            const decodedToken = JSON.parse(atob(token.split('.')[1])); 
+            const now = Math.floor(Date.now() / 1000); 
+           console.log("Decoded Token:", decodedToken); 
+           console.log("Current Time:", now, "Token Expiry Time:", decodedToken.exp); 
+           return decodedToken.exp < now;
+       } catch (error) {
+           console.error("Error decoding token:", error); 
+           return true; 
+         }
+     };
 
     const handleVerification = async (e) => {
         e.preventDefault();
         const token = localStorage.getItem('token'); // Retrieve token
         
-        // if (isTokenExpired(token)) {
-        //     console.log("Token has expired.");
-        //     alert("Your verification token has expired. Please request a new one.");
-        //     return;
-        // }
+         if (isTokenExpired(token)) {
+             console.log("Token has expired.");
+             alert("Your verification token has expired. Please request a new one.");
+             return;
+         }
         if (!token) {
             setVerificationMessage('No token found. Please sign up again.');
             return;

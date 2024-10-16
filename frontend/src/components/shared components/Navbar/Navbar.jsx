@@ -1,16 +1,29 @@
 import "./Navbar.css";
-import {Link, Outlet , NavLink, useNavigate} from "react-router-dom";
+import {Link, Outlet, useNavigate} from "react-router-dom";
 import { useState } from "react";
 import Signup from "../../Signup/Signup";
 import Signin from "../../Signin/Signin";
 import Contact from "../Contact Us/Contact";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { FaUser } from "react-icons/fa";
 
 function Navbar() {
     const [suButtonPopup, setSuButtonPopup] = useState(false);
     const [siButtonPopup, setSiButtonPopup] = useState(false);
     const [contactPopup, setContactPopup] = useState(false);
     const isPopupOpen = suButtonPopup || siButtonPopup || contactPopup;
+
+    const role = localStorage.getItem('role');
+    const navigate = useNavigate();
+    
+    const handleLogout = () => {
+        localStorage.removeItem('token'); // Remove the token
+        localStorage.removeItem('role');
+        navigate('/'); // Redirect to home
+        toast.success('successfully signed out!');
+    };
+
     return <>
         <nav className="navbar">
             <div className="logo">
@@ -21,26 +34,79 @@ function Navbar() {
                 </Link>
             </div>
             <ul className="nav-links">
-                <li className="nav-link">
-                    <Link to="/">Home</Link>
-                    </li>
-                <li className="nav-link"><Link to="/reservation">your&nbsp;reservations</Link></li>
-                <li className="nav-link"
-                  onClick={ () => {
-                    setContactPopup(true);
-                    setSiButtonPopup(false);
-                    setSuButtonPopup(false);
-                    } }
-                >
-                <Link to="/">Contact&nbsp;Us</Link>
-                </li>
-                <li className="nav-link"><Link to="/admin/reservationsTable">admin</Link></li>
-                <li className="nav-link"><Link to="/superAdmin">Sadmin</Link></li>
+            { role ==='user' && (
+                    <>
+                       <li className="nav-link">
+                            <Link to="/">Home</Link>
+                       </li>
+                       <li className="nav-link"><Link to="/reservation">reservations</Link></li>
+                       <li className="nav-link"
+                         onClick={ () => {
+                         setContactPopup(true);
+                         setSiButtonPopup(false);
+                         setSuButtonPopup(false);
+                         }}>
+                             <Link to="/">Contact&nbsp;Us</Link>
+                       </li>
+                       <li className="nav-link" onClick={handleLogout}>signout</li>
+                       <div className="vertical-line"></div>
+                       <div className="user-info">
+                          <p className="user-role">
+                            <FaUser /> {role}
+                          </p>
+                       </div>
 
-                <button className="signout">signout</button>
+                    </>
+                ) }
+                { role === 'manager' && (
+                    <>
+                      <li className="nav-link"><Link to="/admin/reservationsTable">manager</Link></li>
+                      <li className="nav-link"
+                         onClick={ () => {
+                         setContactPopup(true);
+                         setSiButtonPopup(false);
+                          setSuButtonPopup(false);
+                        }}>
+                            <Link to="/">Contact&nbsp;Us</Link>
+                      </li>
+                      <li className="signout nav-link" onClick={handleLogout}>signout</li>
+                      <div className="vertical-line"></div>
+                      <div className="user-info">
+                          <p className="user-role">
+                            <FaUser /> {role}
+                          </p>
+                       </div>
+
+                    </>
+              
+            ) }
+              
+                { role === 'admin' && ( //superadmin
+                    <>
+                       <li className="nav-link"><Link to="/superAdmin">Admin</Link></li>
+                       <li className="nav-link"
+                         onClick={ () => {
+                         setContactPopup(true);
+                         setSiButtonPopup(false);
+                          setSuButtonPopup(false);
+                        }}>
+                            <Link to="/">Contact&nbsp;Us</Link>
+                      </li>
+                       <li className="signout nav-link" onClick={handleLogout}>signout</li>
+                       <div className="vertical-line"></div>
+                       <div className="user-info">
+                          <p className="user-role">
+                            <FaUser /> {role}
+                          </p>
+                       </div>
+
+                    </>
+                ) }
+
             </ul>
-            <div className="vertical-line"></div>
-            <div className="nav-btns">
+            { role === null && (
+                <>
+                   <div className="nav-btns">
                <button className="nav-btn signin-btn"
                 onClick={ () => {
                     setSiButtonPopup(true);
@@ -58,6 +124,9 @@ function Navbar() {
                    <Link to="/">Sign Up</Link>
                </button>
             </div>
+                </>
+            )}
+            
 
         </nav>
         <Contact trigger={contactPopup} closeModal={() => setContactPopup(false)}/>

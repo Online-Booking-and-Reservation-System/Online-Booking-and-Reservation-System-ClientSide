@@ -35,7 +35,10 @@ function Signup({ trigger, closeModal }) {
             const token = response.data.data; 
             console.log('Token:', token);
             setToken(token); 
+            // const role = decodedToken.role; // Extract the role from the token
+            // console.log('Role:', role);
             localStorage.setItem('token', token);
+            // localStorage.setItem('role', role); 
             setShowVerification(true);
             closeModal(); 
             toast.success('Check your email for the verification code.');

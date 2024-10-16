@@ -6,7 +6,6 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const API_URL = "https://online-booking-and-reservation-system-server-side.vercel.app/api";
 
 function Signin({ trigger, closeModal }) {
    const [email, setEmail] = useState("");
@@ -15,11 +14,20 @@ function Signin({ trigger, closeModal }) {
    const handleSignin = async (e) => {
        e.preventDefault();
        try {
-           const response = await axios.post(`${API_URL}/auth/login`, {
+           const response = await axios.post('http://localhost:3000/api/auth/login', {
                email,
                password,
            });
-           console.log('Signed in successfully:', response.data);
+            const token = response.data.data.token; 
+            const decodedToken = JSON.parse(atob(token.split('.')[1])); 
+            const role = decodedToken.role; 
+           closeModal();
+          //  console.log(decodedToken);
+          //  console.log(role);
+           localStorage.setItem('token', token);
+           localStorage.setItem('role', role); 
+           toast.success('sign in successful!')
+          //  console.log('Signed in successfully:', response);
        } catch (error) {
            console.error('Error signing in:', error.response?.data || error.message);
            toast.error('Error signing in, please try again.');

@@ -3,7 +3,7 @@
     background-color: #ffffff;
     height: 117px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     /* gap: 110px; */
     gap: 10px;
     align-items: center;
@@ -11,6 +11,7 @@
 }
 
 .logo a {
+    margin-left: 50px;
     font-size: 30px;
     display: flex;
     text-decoration: none;
@@ -29,6 +30,7 @@
 .nav-links {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     list-style: none;
     gap: 40px;
     padding-left: 200px;
@@ -36,8 +38,18 @@
     padding-right: 0;
 }
 
+.nav-link{
+    color: #5E5E5E;
+    font-size: 20px;
+    transition: all .4s ease;
+    cursor: pointer;
+}
+
+.nav-link:hover{
+    color: #F49B33;
+}
+
 .nav-link a {
-    padding-bottom: 10px;
     text-decoration: none;
     color: #5E5E5E;
     font-size: 20px;
@@ -48,18 +60,6 @@
     color: #F49B33;
 }
 
-.signout {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    font-size: 20px;
-    color: #5E5E5E;
-    transition: all .4s ease;
-}
-
-.signout:hover{
-    color: #F49B33;
-}
 
 .vertical-line {
     height: 45px;
@@ -93,7 +93,7 @@
 .nav-btns {
     display: flex;
     gap: 25px;
-    padding-right: 0;
+    margin-right: 50px;
 }
 
 .nav-btn {
@@ -130,6 +130,15 @@
     transform: scale(1.04);
 }
 
+.user-info{
+    margin-right: 40px;
+}
+
+.user-role{
+    font-size: 20px;
+    color: #F49B33;
+}
+
 /* RESPONSIVE STYLES */
 
 @media (max-width: 1280px) {
@@ -151,6 +160,12 @@
     .nav-links {
         gap: 20px;
         padding-left: 0;
+    }
+
+    .nav-link {
+        font-size: 12px;
+        position: relative;
+        top: 1px;
     }
 
     .nav-link a {

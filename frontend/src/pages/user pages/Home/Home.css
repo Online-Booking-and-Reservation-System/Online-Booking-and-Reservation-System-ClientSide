@@ -4,6 +4,7 @@
     justify-content: center;
     gap: 5%;
     padding: 32px 0;
+    flex-wrap: wrap;
 }
 .restaurants-window{
     background-color: white;
@@ -54,14 +55,15 @@
     justify-content: space-between;
 }
 .card{
+    cursor: pointer;
     border-radius: 8px;
-    width: 25%;
+    width: 28%;
     padding: 16px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
     transition: 0.4s;
     margin: 16px;
+    gap: 8px;
 }
 .card img{
     width: 100%;
@@ -78,4 +80,37 @@
 }
 .card:hover{
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+
+@media (max-width: 1200px) {
+    .restaurants-window {
+        width: 70%;
+    }
+    .side-menu {
+        width: 20%;
+    }
+    .card {
+        width: 40%;
+    }
+}
+@media (max-width: 768px) {
+    .restaurants-window {
+        width: 90%;
+    }
+    .side-menu {
+        width: 90%;
+        margin-top: 24px;
+    }
+    .card {
+        width: 44%;
+    }
+}
+@media (max-width: 480px) {
+    .card {
+        width: 100%;
+    }
+    .side-menu {
+        width: 90%;
+    }
 }

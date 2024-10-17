@@ -7,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-function Signin({ trigger, closeModal }) {
+function Signin({ trigger, closeModal, openSignupPopup }) {
    const [email, setEmail] = useState("");
    const [password, setPassword] = useState("");
 
@@ -59,7 +59,11 @@ function Signin({ trigger, closeModal }) {
             </form>
                <div className="si-bottom">
                  <p className="bottom-q"> don't have an account?</p>
-                 <p className="signup-link">Signup</p>
+                 <p className="signup-link" 
+                    onClick={openSignupPopup}
+                  >
+                     Signup
+                  </p>
                </div>
             </div>
           </div>

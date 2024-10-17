@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Verification from './Verification';
 
-function Signup({ trigger, closeModal }) {
+function Signup({ trigger, closeModal, openSigninPopup }) {
     const [fullName, setFullName] = useState("");
     const [email, setEmail] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
@@ -97,7 +97,13 @@ function Signup({ trigger, closeModal }) {
                             </form>
                             <div className="su-bottom">
                                 <p className="bottom-q">Already a user?</p>
-                                <p className="signin-link">Signin</p>
+                                <p className="signin-link" 
+                                   onClick={() => {
+                                    closeModal();        // Close Signup popup
+                                    openSigninPopup();   // Open Signin popup
+                                }}>
+                                    Signin
+                                </p>
                             </div>
                         </div>
                     </div>

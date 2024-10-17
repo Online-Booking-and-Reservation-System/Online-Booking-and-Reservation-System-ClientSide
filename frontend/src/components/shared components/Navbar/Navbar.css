@@ -130,6 +130,13 @@
     transform: scale(1.04);
 }
 
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+}
+
 .user-info{
     margin-right: 40px;
 }
@@ -145,21 +152,18 @@
     .navbar {
         height: auto; 
         flex-direction: row;
-        padding: 10px 20px;
+        padding: 10px;
         align-items: center;
-        justify-content: center;
-        gap: 250px;
+        justify-content: space-between;
         width: 100%;
     }
 
     .logo a {
         font-size: 18px; 
-        padding-left: 0; 
     }
 
     .nav-links {
         gap: 20px;
-        padding-left: 0;
     }
 
     .nav-link {
@@ -176,7 +180,15 @@
 
     .signout{
         font-size: 12px;
-        padding: 5px 8px;
+        padding-right: 20px;
+    }
+
+    .vertical-line {
+        height: 20px;
+        width: 1px;
+        background-color: #F49B33;
+        margin-right: 0;
+        position: relative;
     }
 
     .nav-btns {
@@ -185,13 +197,19 @@
         
     }
 
-    .vertical-line {
-        display: none; 
-    }
-
     .nav-btn {
         font-size: 12px;
         padding: 5px 10px;
+    }
+
+    .user-info{
+        margin-right: 40px;
+        margin-left: 20px;
+    }
+    
+    .user-role{
+        font-size: 12px;
+        color: #F49B33;
     }
 }
 
@@ -199,15 +217,14 @@
     .navbar {
         height: auto; 
         flex-direction: row;
-        padding: 10px 20px;
+        padding: 10px;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         gap: 200px;
     }
 
     .logo a {
         font-size: 18px;
-        padding-left: 0; 
     }
 
     .nav-links {
@@ -226,14 +243,18 @@
         padding: 5px 8px;
     }
 
+    .vertical-line {
+        height: 15px;
+        width: 1px;
+        background-color: #F49B33;
+        margin-right: 0;
+        position: relative;
+    }
+
     .nav-btns {
         padding-right: 0;
         gap: 10px; 
         
-    }
-
-    .vertical-line {
-        display: none; 
     }
 
     .nav-btn {
@@ -248,13 +269,15 @@
         flex-direction: row;
         padding: 10px 20px;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         gap: 100px;
+        width: 100%;
     }
 
     .logo a {
         font-size: 18px; 
         padding-left: 0; 
+        margin-left: 10px;
     }
 
     .nav-links {
@@ -276,6 +299,7 @@
     .nav-btns {
         padding-right: 0;
         gap: 10px; 
+        margin-right: 10px;
         
     }
 
@@ -293,14 +317,14 @@
     .navbar {
         height: auto; 
         flex-direction: row;
-        padding: 10px 20px;
+        justify-content: space-between;
+        padding: 10px;
         align-items: center;
-       
     }
 
     .logo a {
         font-size: 18px; 
-        padding-left: 0;
+        margin-left: 0;
     }
 
     .nav-links {
@@ -387,9 +411,9 @@
         flex-direction: row;
         padding: 10px 20px;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         gap: 70px;
-        width: 130%;
+        width: 100%;
     }
 
     .logo a {
@@ -416,6 +440,7 @@
     .nav-btns {
         padding-right: 0;
         gap: 10px;
+        margin-right: 0;
         
     }
 
@@ -431,14 +456,15 @@
 
 @media (max-width: 430px) {
     .navbar {
-        height: 50px;
+        height: 30px;
         flex-direction: row;
-        justify-content: center;
-        width: 160%;
+        justify-content: space-between;
+        width: 430px;
         align-items: center;
     }
 
     .logo a{
+        margin-left: 0;
         padding-left: 0;
         display: flex;
         font-size: 12px;
@@ -466,7 +492,55 @@
     .nav-btns {
         flex-direction: row; 
         gap: 10px;
-        
+        margin-right: 0;
+    }
+
+    .nav-btn {
+        font-size: 10px;
+        width: 60px;
+
+    }
+}
+
+@media (max-width: 412px) {
+    .navbar {
+        height: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+    }
+
+    .logo a{
+        margin-left: 0;
+        padding-left: 0;
+        display: flex;
+        font-size: 12px;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 15px; 
+        padding: 0;
+    }
+
+    .nav-link a {
+        font-size: 10px;
+        position: relative;
+        top: -2px;
+
+    }
+
+    .signout{
+        font-size: 10px;
+    }
+
+    .nav-btns {
+        flex-direction: row; 
+        gap: 10px;
+        margin-right: 0;
     }
 
     .nav-btn {
@@ -478,10 +552,148 @@
 
 @media (max-width: 390px) {
     .navbar {
-        height: 50px;
+        height: auto;
         flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+    }
+
+    .logo a{
+        padding-left: 0;
+        font-size: 12px;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        align-items: center;
         justify-content: center;
-        width: 160%;
+        gap: 15px; 
+        padding: 0;
+    }
+
+    .nav-link a {
+        font-size: 10px; 
+        position: relative;
+        top: -2px;
+
+    }
+
+    .signout{
+        font-size: 10px;
+    }
+
+    .nav-btns {
+        flex-direction: row;
+        gap: 10px;
+        margin-right: 10px;
+    }
+
+    .nav-btn {
+        font-size: 10px;
+        width: 60px;
+
+    }
+}
+
+@media (max-width: 375px) {
+    .navbar {
+        height: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+    }
+
+    .logo a{
+        padding-left: 0;
+        font-size: 12px;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 15px; 
+        padding: 0;
+    }
+
+    .nav-link a {
+        font-size: 10px; 
+        position: relative;
+        top: -2px;
+
+    }
+
+    .signout{
+        font-size: 10px;
+    }
+
+    .nav-btns {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .nav-btn {
+        font-size: 8px;
+        width: 55px;
+        
+
+    }
+}
+
+@media (max-width: 360px) {
+    .navbar {
+        height: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 110%;
+        align-items: center;
+    }
+
+    .logo a{
+        padding-left: 0;
+        font-size: 12px;
+        margin-left: 0;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 15px; 
+        padding: 0;
+    }
+
+    .nav-link a {
+        font-size: 10px; 
+        position: relative;
+        top: -2px;
+
+    }
+
+    .signout{
+        font-size: 10px;
+    }
+
+    .nav-btns {
+        flex-direction: row;
+        gap: 10px;
+        margin-right: 10px;
+    }
+
+    .nav-btn {
+        font-size: 10px;
+        width: 60px;
+    }
+}
+
+@media (max-width: 344px) {
+    .navbar {
+        height: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 115%;
         align-items: center;
     }
 
@@ -523,4 +735,50 @@
     }
 }
 
+@media (max-width: 700px) and (min-width: 300px) {
+    .nav-links {
+        display: none; /* Hide regular links */
+    }
 
+    .menu-icon {
+        display: block; /* Show menu icon */
+        color: #333;
+        font-size: 20px;
+    }
+
+    .dropdown-menu {
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff;
+        color: #333;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: fit-content;
+        padding: 1.2rem;
+        text-align: center;
+        list-style: none;
+        z-index: 1000;
+    }
+
+    .dropdown-menu li {
+        margin-bottom: .5rem;
+    }
+
+    .dropdown-menu li a {
+        color: #333;
+        font-size: 12px;
+        text-decoration: none;
+    }
+}
+
+/* Show nav links normally for larger screens (above 700px) */
+@media (min-width: 701px) {
+    .nav-links {
+        display: flex; /* Show regular links */
+    }
+
+    .dropdown-menu {
+        display: none; /* Hide dropdown on larger screens */
+    }
+}

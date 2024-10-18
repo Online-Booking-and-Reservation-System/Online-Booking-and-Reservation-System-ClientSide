@@ -1,6 +1,7 @@
 import './AddRestaurant.css'
 import axios from 'axios'
 import { useState } from 'react'
+import { toast } from 'react-toastify';
 
 function AddRestaurant(){
     const [restaurantName, setRestaurantName] = useState('')
@@ -29,10 +30,12 @@ function AddRestaurant(){
                 sizeTable,
                 imgUrl
             });
-            console.log(res)
+            if (res.status === 201){
+                toast.success('Restaurant Added Successfully.')
+            }
         }
         catch(err){
-
+            toast.error('Failed to Add Restaurant.')
         }
     }
 

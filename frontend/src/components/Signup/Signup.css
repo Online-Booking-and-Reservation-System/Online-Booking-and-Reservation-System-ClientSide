@@ -131,7 +131,8 @@
 .signup-container {
     display: flex;
     flex-direction: column;
-    width: 400px; /* Default width for laptops */
+    width: 300px; /* Default width for laptops */
+    max-width: 300px;
     padding: 40px;  
     border-radius: 8px;
     background-color: #ffffff;
@@ -179,7 +180,7 @@
     font-size: 1rem;
 }
 
-.signup input {
+.su-input {
     padding-left: 2em;
     width: 94%;
     height: 2.5em;
@@ -191,7 +192,7 @@
 
 
 /* Phone input and flag */
-.phone {
+.signup .phone {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -200,25 +201,27 @@
 }
 
 .phone input {
-    flex: 1;
-    padding-left: 1rem;
+    padding-left: 2em;
+    width: 80%;
     height: 2.5em;
     border-radius: 4px;
+    border: 1px solid #5E5E5E;
+    margin-bottom: 1rem;
 }
 
 .flag-img {
     transform: translateY(-.5em);
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
 }
 
 /* Signup button */
-.signup-btn2 {
+.signup .signup-btn2 {
     background-color: #2B2B2B;
     color: #F49B33;
     border: 1px solid #2B2B2B;
-    padding: 0.75rem;
+    padding: 0.7rem;
     margin-top: 10px;
     border-radius: 4px;
     cursor: pointer;
@@ -257,26 +260,196 @@
 /* Media queries for smaller and larger screens */
 
 /* Tablets and smaller screens */
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
     .signup-container {
-        width: 50%; /* Responsive width for tablets */
+        width: 30%; /* Responsive width for tablets */
         max-width: 500px;
-        padding: 40px;
+        padding: 30px;
+        height: fit-content;
     }
 
     .suTop {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .su {
-        font-size: 1.4rem; /* Slightly smaller title for tablets */
+        font-size: 1.2rem; /* Slightly smaller title for tablets */
+    }
+    
+    .close-btn {
+        font-size: 1.2rem;
+    }
+
+    .su-label {
+        margin-bottom: 0.5rem;
+        color: #5E5E5E;
+        font-size: 1rem;
     }
 
     .signup input {
-        height: 2.4em;
+        height: 2em;
+        width: 92%;
+        margin-bottom: .5em;
     }
 }
 
+
+@media (max-width: 1024px) {
+    .signup-container {
+        width: 30%; /* Responsive width for tablets */
+        max-width: 500px;
+        padding: 30px;
+        height: fit-content;
+    }
+
+    .suTop {
+        font-size: 1rem;
+    }
+
+    .su {
+        font-size: 1.2rem; /* Slightly smaller title for tablets */
+    }
+    
+    .close-btn {
+        font-size: 1.2rem;
+    }
+
+    .su-label {
+        margin-bottom: 0.5rem;
+        color: #5E5E5E;
+        font-size: 1rem;
+    }
+
+    .signup .phone{ 
+        justify-content: left;
+
+    }
+
+    .signup .phone .flag-img{
+        margin-left: 0;
+    }
+
+    .signup .phone input{ 
+        width: 84%;
+
+    }
+
+    .signup{
+        padding-left: 10px;
+    }
+
+    .signup .si-input {
+        height: 2em;
+        width: 100%;
+        margin-bottom: .5em;
+    }
+
+    .signup-btn2{
+        width: 96%;
+    }
+}
+
+@media (max-width: 912px) {
+    .signup-container {
+        width: 30%; /* Responsive width for tablets */
+        max-width: 500px;
+        padding: 30px;
+        height: fit-content;
+    }
+
+    .signup{
+        padding-right: 20px;
+    }
+
+    .suTop {
+        font-size: 1rem;
+    }
+
+    .su {
+        font-size: 1.2rem; /* Slightly smaller title for tablets */
+    }
+    
+    .close-btn {
+        font-size: 1.2rem;
+    }
+
+    .su-label {
+        margin-bottom: 0.5rem;
+        color: #5E5E5E;
+        font-size: 1rem;
+    }
+
+    .signup{
+        padding-left: 10px;
+    }
+
+    .signup .si-input {
+        height: 2em;
+        width: 100%;
+        margin-bottom: .5em;
+        margin-left: 2em;
+    }
+
+    .signup .phone {
+        justify-content: left;    
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .signup .phone input{    
+        gap: 0.1rem;
+        width: 82%;
+    }
+
+    .signup-btn2{
+        width: 96%;
+    }
+  
+}
+
+@media (max-width: 853px) {
+    .signup-container {
+        width: 30%; /* Responsive width for tablets */
+        max-width: 500px;
+        padding: 30px;
+        height: fit-content;
+    }
+
+    .suTop {
+        font-size: 1rem;
+    }
+
+    .su {
+        font-size: 1.2rem; /* Slightly smaller title for tablets */
+    }
+    
+    .close-btn {
+        font-size: 1.2rem;
+    }
+
+    .su-label {
+        margin-bottom: 0.5rem;
+        color: #5E5E5E;
+        font-size: 1rem;
+        margin-left: 1em;
+    }
+
+    .signup input {
+        height: 2em;
+        width: 100%;
+        margin-bottom: .5em;
+        margin-left: 1em;
+    }
+
+    .phone {    
+        gap: 0.1rem;
+        width: 98%;
+    }
+    
+    .flag-img {
+       margin-left: 1em;
+    }
+}
 /* Mobile phones */
 @media (max-width: 768px) {
     .signup-container {
@@ -328,4 +501,145 @@
     .signup input {
         height: 2.8em;
     }
+}
+
+@media (max-width: 540px) {
+    .signup-container {
+        width: 50%; /* Wider for large screens */
+        padding: 40px;
+    }
+
+    .suTop {
+        font-size: 1rem;
+        gap: .5rem;
+    }
+
+    .su {
+        font-size: 1.2rem; /* Slightly smaller title for tablets */
+    }
+    
+    .close-btn {
+        font-size: 1.2rem;
+    }
+
+    .phone {    
+
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    .flag-img{
+        margin-left: 0;
+    }
+
+    .su-label {
+        margin-bottom: 0.5rem;
+        color: #5E5E5E;
+        font-size: .9rem;
+        
+    }
+
+    .signup input {
+        height: 2em;
+        width: 88%;
+        margin-bottom: .5em;
+    }
+
+    .su-bottom p{
+        gap: 0.5rem;
+        font-size: .9rem;
+    } 
+}
+
+
+@media (min-width: 412px) {
+    .signup-container {
+        width: 50%; /* Wider for large screens */
+        padding: 40px;
+    }
+
+    .suTop {
+        font-size: 1rem;
+        gap: .5rem;
+    }
+
+    .su {
+        font-size: 1.2rem; /* Slightly smaller title for tablets */
+    }
+    
+    .close-btn {
+        font-size: 1.2rem;
+    }
+
+    .su-label {
+        margin-bottom: 0.5rem;
+        color: #5E5E5E;
+        font-size: .9rem;
+        
+    }
+
+    .signup input {
+        height: 2em;
+        width: 88%;
+        margin-bottom: .5em;
+    }
+
+    .su-bottom p{
+        gap: 0.5rem;
+        font-size: .9rem;
+    } 
+}
+
+@media (min-width: 344px) {
+    .signup-container {
+        width: 55%; /* Wider for large screens */
+        padding: 40px;
+        height: fit-content;
+        padding-right: 40px;
+    }
+
+    .signup{
+        margin-left: 0;
+        
+    }
+
+    .suTop {
+        font-size: 1rem;
+        gap: .5rem;
+    }
+
+    .su {
+        font-size: 1rem; /* Slightly smaller title for tablets */
+    }
+    
+    .close-btn {
+        font-size: 1rem;
+    }
+
+    .su-label {
+        margin-bottom: 0.5rem;
+        color: #5E5E5E;
+        font-size: .9rem;
+        margin-left: 0;
+    }
+
+    .signup input {
+        height: 2em;
+        width: 90%;
+        margin-bottom: .5em;
+        margin-left: 0;
+
+    }
+
+    .su-bottom p{
+        gap: 0.5rem;
+        font-size: .9rem;
+    } 
+
+    .phone {    
+        gap: 1rem;
+        width: 102%;
+        justify-content: left;
+    }
+    
 }

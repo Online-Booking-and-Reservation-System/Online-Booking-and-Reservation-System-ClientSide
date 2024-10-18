@@ -6,3 +6,16 @@
     padding: 32px 0;
     flex-wrap: wrap;
 }
+.restaurants-window-Details{
+    background-color: white;
+    width: 60%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 32px;   
+    color: #5E5E5E;
+}
+
+.restaurants-window-Details h2{
+    padding-bottom: 16px;
+    border-bottom: 2px solid#ED994C;
+}

@@ -1,0 +1,31 @@
+*{
+    font-family: sans-serif
+}
+.contact{
+    width: 100%;
+    background-color: #2B2B2B;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+.logo{
+    color: #ED994C;
+    font-size: 32px;
+}
+.links{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 4%;
+}
+.links p{
+    color: #FFFFFF;
+    font-size: smaller;
+}
+.credits p{
+    color: #ffffffbc;
+    font-size: x-small;
+}

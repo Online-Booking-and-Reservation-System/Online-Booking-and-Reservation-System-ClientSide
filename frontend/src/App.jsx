@@ -14,7 +14,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AuthProvider from './Context/AuthProvider';
 import './App.css';
-
+import Footer from './components/shared components/Footer/Footer';
+import RestaurantDetails from './pages/superAdminPages/RestaurantDetails/RestaurantDetails';
 
 function App() {
     return (
@@ -23,20 +24,23 @@ function App() {
         <BrowserRouter>
                 <Routes>
                     <Route path='/' element={<Navbar />}>
-                        <Route index element={<Home />} />
-                        <Route path='/signup' element={<Signup trigger={false} />} />
-                        <Route path='/signin' element={<Signin />} />
-                        <Route path='/admin/*' element={<Admin />}>
-                          <Route path='reservationsTable' element={<RTable />} />
-                          <Route path='reservationsList' element={<RList />} />
-                          <Route path='profile' element={<Profile />} />
-                        </Route>
-                        <Route path='/contactUs' element={<Contact />} />
-                        <Route path='/reservation' element={<Reservation />} />
-                        <Route path='/superAdmin' element={<SuperAdmin />} />
+                            <Route index element={<Home />} />
+                            <Route path='/signup' element={<Signup trigger={false} />} />
+                            <Route path='/signin' element={<Signin />} />
+                            <Route path='/admin/*' element={<Admin />}>
+                                <Route path='reservationsTable' element={<RTable />} />
+                                <Route path='reservationsList' element={<RList />} />
+                                <Route path='profile' element={<Profile />} />
+                            </Route>
+                            <Route path='/contactUs' element={<Contact />} />
+                            <Route path='/reservation' element={<Reservation />} />
+                            <Route path='/superAdmin/*' element={<SuperAdmin />}>
+                                <Route path='restaurantDetails' element={<RestaurantDetails/>}/>
+                            </Route>
                     </Route>
                 </Routes>
                 <ToastContainer />
+                <Footer/>
             </BrowserRouter>
         {/* </AuthProvider> */}
         </>

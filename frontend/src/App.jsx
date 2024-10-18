@@ -15,7 +15,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import AuthProvider from './Context/AuthProvider';
 import './App.css';
 import Footer from './components/shared components/Footer/Footer';
-import RestaurantDetails from './pages/superAdminPages/RestaurantDetails/RestaurantDetails';
+import EditRestaurant from './pages/superAdminPages/EditRestaurant/EditRestaurant';
+import EditAdmins from './pages/superAdminPages/EditAdmins/EditAdmins';
 
 function App() {
     return (
@@ -35,7 +36,8 @@ function App() {
                             <Route path='/contactUs' element={<Contact />} />
                             <Route path='/reservation' element={<Reservation />} />
                             <Route path='/superAdmin/*' element={<SuperAdmin />}>
-                                <Route path='restaurantDetails' element={<RestaurantDetails/>}/>
+                                <Route path='editRestaurant' element={<EditRestaurant/>}/>
+                                <Route path='editAdmins' element={<EditAdmins/>}/>
                             </Route>
                     </Route>
                 </Routes>

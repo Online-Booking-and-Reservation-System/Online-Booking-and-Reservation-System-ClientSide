@@ -1,0 +1,54 @@
+.header button{
+    background-color: #ED994C;
+    border: 0;
+    padding: 8px 32px;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: 0.2s ease-in;
+}
+.header button:hover{
+    background-color: white;
+    border: 1px solid #ED994C;
+}
+.add-restaurant{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 64px;
+}
+.add-restaurant input, textarea{
+    border: 1px solid #ED994C;;
+}
+.add-restaurant label{
+    font-weight: bold;
+}
+.text{
+    margin-bottom: 16px;
+    padding: 8px;
+    border-radius: 8px;
+    width: 50vw;
+}
+.add-restaurant textarea{
+    margin-bottom: 16px;
+    padding: 8px;
+    border-radius: 8px;
+    width: 50vw;
+}
+.time{
+    align-items: center;
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+.time input{
+    padding: 8px;
+    border-radius: 8px;
+    width: 10vw;
+}
+.size label{
+    font-weight: lighter;
+}
+.size{
+    display: flex;
+    gap: 4vw
+}

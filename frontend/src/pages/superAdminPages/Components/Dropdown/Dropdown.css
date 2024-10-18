@@ -1,0 +1,21 @@
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown ul {
+    position: absolute;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: white;
+    border: 1px solid #ccc;
+    width: 100%;
+    z-index: 1;
+}
+.dropdown li {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+.dropdown li:hover {
+    background: #f0f0f0;
+}

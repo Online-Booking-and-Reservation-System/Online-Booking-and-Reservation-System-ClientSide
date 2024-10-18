@@ -12,6 +12,11 @@ function Menu() {
 					</Link>
 				</span>
 				<span>
+					<Link to='/superAdmin/addRestaurant'>
+						<FontAwesomeIcon icon={faPlus} className='plus'/><FontAwesomeIcon icon={faUtensils} />
+					</Link>
+				</span>
+				<span>
 					<Link to='/superAdmin/editRestaurant'>
 						<FontAwesomeIcon icon={faUtensils} />
 					</Link>

@@ -12,7 +12,6 @@ function Home() {
 			try{
 				const res= await axios.get('http://localhost:3000/api/resturants/');
 				setRestaurants(res.data.data.resturants)
-				console.log(restaurants)
 			}
 			catch(err){}
 		}
@@ -37,12 +36,10 @@ function Home() {
 					<div className='lil-container'>
 						<h3 className='title'>All Locations</h3>
 						<ul>
-							<li><FontAwesomeIcon icon={faLocationDot} /> 3913 NE 163rd St. North Miami Beach, FL 33160</li>
-							<li><FontAwesomeIcon icon={faLocationDot} /> 1 American Dream Way. #F225East Rutherford, NJ 07073</li>
-							<li><FontAwesomeIcon icon={faLocationDot} /> 1760 Sawgrass Mills, CircleSunrise, FL 33323-3912</li>
-							<li><FontAwesomeIcon icon={faLocationDot} /> 4250 Salzedo Street, Suite 1425Coral Gables, FL 33146</li>
-							<li><FontAwesomeIcon icon={faLocationDot} /> 344 Plaza Real, Suite 1433Boca Raton, FL 33432-3937</li>
-							<li><FontAwesomeIcon icon={faLocationDot} /> 360 San Lorenzo Avenue, Suite 1430Coral Gables, FL 33146-1865</li>
+							{restaurants.map((r)=>(
+								<li key={r._id}><FontAwesomeIcon icon={faLocationDot}/> {r.fullAddress}</li>
+							))
+							}
 						</ul>
 					</div>
 				</div>

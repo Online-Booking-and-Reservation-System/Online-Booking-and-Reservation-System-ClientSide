@@ -17,6 +17,7 @@ import './App.css';
 import Footer from './components/shared components/Footer/Footer';
 import EditRestaurant from './pages/superAdminPages/EditRestaurant/EditRestaurant';
 import EditAdmins from './pages/superAdminPages/EditAdmins/EditAdmins';
+import AddRestaurant from './pages/superAdminPages/AddRestaurant/AddRestaurant';
 
 function App() {
     return (
@@ -36,6 +37,7 @@ function App() {
                             <Route path='/contactUs' element={<Contact />} />
                             <Route path='/reservation' element={<Reservation />} />
                             <Route path='/superAdmin/*' element={<SuperAdmin />}>
+                                <Route path='addRestaurant' element={<AddRestaurant/>}/>
                                 <Route path='editRestaurant' element={<EditRestaurant/>}/>
                                 <Route path='editAdmins' element={<EditAdmins/>}/>
                             </Route>

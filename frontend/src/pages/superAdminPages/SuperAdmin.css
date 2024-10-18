@@ -2,7 +2,7 @@
     display: flex;
 }
 .open-page{
-    width: auto;
+    width: 100%;
 }
 .menu{
     width: 10%;
@@ -32,4 +32,7 @@
 }
 .open-page{
     padding: 16px;
+}
+.plus{
+    font-size: 16px;
 }

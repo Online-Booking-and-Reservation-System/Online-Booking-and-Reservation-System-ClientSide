@@ -41,6 +41,7 @@ function App() {
                                 <Route path='editRestaurant' element={<EditRestaurant/>}/>
                                 <Route path='editAdmins' element={<EditAdmins/>}/>
                             </Route>
+                            <Route path='/resturant/:id' element={<restaurantDetails />} />
                     </Route>
                 </Routes>
                 <ToastContainer />

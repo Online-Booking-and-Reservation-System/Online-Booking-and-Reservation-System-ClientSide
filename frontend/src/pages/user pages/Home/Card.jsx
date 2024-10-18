@@ -1,19 +1,18 @@
-function Card(){
+function Card({restaurant}){
     return(
         <>
             <div className="card">
-                <img src="/SeaGrills1.png"></img>
-                <h4>Sea Grill North Miami Beach</h4>
+                <img src={restaurant.imgUrl}></img>
+                <h4>{restaurant.restaurantName}</h4>
                 <div>
-                    <p>3913 NE 163rd St.</p> 
-                    <p>North Miami Beach, FL 33160</p>
+                    <p>{restaurant.fullAddress}</p>
                 </div>
-                <p>11:00 AM - 11:00 PM</p>
-                <div className="times">
-                    <div>11:00</div>
-                    <div>12:00</div>
-                    <div>01:00</div>
-                </div>
+                <p>{restaurant.openTime}:00 - {restaurant.closeTime}:00</p>
+                {/* <div className="times">
+                    <div>{restaurant.openTime}:00</div>
+                    <div>{restaurant.openTime + 1}:00</div>
+                    <div>{restaurant.openTime + 2}</div>
+                </div> */}
             </div>
         </>
     )

@@ -1,7 +1,7 @@
-function Card({restaurant}){
+function Card({restaurant , onClick}){
     return(
         <>
-            <div className="card">
+            <div className="card" onClick={onClick}>
                 <img src={restaurant.imgUrl}></img>
                 <h4>{restaurant.restaurantName}</h4>
                 <div>

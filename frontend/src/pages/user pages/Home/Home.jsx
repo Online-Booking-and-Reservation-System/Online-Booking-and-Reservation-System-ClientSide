@@ -3,20 +3,31 @@ import Card from "./Card.jsx"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot} from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 function Home() {
+	const [restaurants, setRestaurants] = useState([])
+	useEffect(()=>{
+		async function getRestaurants(){
+			try{
+				const res= await axios.get('http://localhost:3000/api/resturants/');
+				setRestaurants(res.data.data.resturants)
+				console.log(restaurants)
+			}
+			catch(err){}
+		}
+		getRestaurants();
+	},[])
 	return (
 		<>
 			<div className='container'>
 				<div className='restaurants-window'>
 					<h2>Our Restaurants</h2>
 					<div className='cards-container'>
-					{<Card/>}
-					{<Card/>}
-					{<Card/>}
-					{<Card/>}
-					{<Card/>}
-					{<Card/>}
+					{restaurants.map((restaurant)=>(
+						<Card restaurant={restaurant} key={restaurant._id}/>
+					))
+					}
 					</div>
 				</div>
 				<div className='side-menu'>

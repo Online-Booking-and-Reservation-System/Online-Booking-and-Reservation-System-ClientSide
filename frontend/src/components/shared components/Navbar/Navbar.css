@@ -735,7 +735,7 @@
     }
 }
 
-@media (max-width: 700px) and (min-width: 300px) {
+@media (max-width: 700px) and (min-width: 100px) {
     .nav-links {
         display: none; /* Hide regular links */
     }

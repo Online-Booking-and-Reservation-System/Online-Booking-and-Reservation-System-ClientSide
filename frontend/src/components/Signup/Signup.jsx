@@ -63,12 +63,14 @@ function Signup({ trigger, closeModal, openSigninPopup }) {
                             <form className="signup" onSubmit={handleSignup}>
                                 <label className='su-label'>Full Name</label>
                                 <input type="text"
+                                    className='su-input'
                                     value={fullName}  
                                     required
                                     onChange={(e) => setFullName(e.target.value)}
                                     placeholder="Bob Smith" />
                                 <label className='su-label'>Email</label>
                                 <input type="email"
+                                    className='su-input'
                                     value={email}
                                     required
                                     onChange={(e) => setEmail(e.target.value)}
@@ -85,11 +87,13 @@ function Signup({ trigger, closeModal, openSigninPopup }) {
                                 </div>
                                 <label className='su-label'>Password</label>
                                 <input type="password"
+                                    className='su-input'
                                     onChange={(e) => setPassword(e.target.value)}
                                     required
                                     placeholder="******" />
                                 <label className='su-label'>Confirm Password</label>
                                 <input type="password"
+                                    className='su-input'
                                     onChange={(e) => setConfirmPassword(e.target.value)}
                                     required
                                     placeholder="******" />

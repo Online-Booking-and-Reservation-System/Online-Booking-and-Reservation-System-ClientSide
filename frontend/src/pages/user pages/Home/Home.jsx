@@ -4,9 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot} from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-
+import { Navigate, useNavigate } from 'react-router-dom';
 function Home() {
-	const [restaurants, setRestaurants] = useState([])
+	const [restaurants, setRestaurants] = useState([]);
+	const navigate = useNavigate();
 	useEffect(()=>{
 		async function getRestaurants(){
 			try{
@@ -16,7 +17,10 @@ function Home() {
 			catch(err){}
 		}
 		getRestaurants();
-	},[])
+	},[]);
+	const handleCardClick = (id) => {
+        navigate(`/resturant/${id}`);  // Navigate to the restaurant details page with the restaurant ID
+    };
 	return (
 		<>
 			<div className='container'>
@@ -24,7 +28,7 @@ function Home() {
 					<h2>Our Restaurants</h2>
 					<div className='cards-container'>
 					{restaurants.map((restaurant)=>(
-						<Card restaurant={restaurant} key={restaurant._id}/>
+						<Card restaurant={restaurant} key={restaurant._id} onClick={() => handleCardClick(restaurant._id)}/>
 					))
 					}
 					</div>

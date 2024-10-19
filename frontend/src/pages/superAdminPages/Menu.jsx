@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUtensils, faUsers, faPlus} from '@fortawesome/free-solid-svg-icons';
+import { faUtensils, faUsers, faPlus, faPenToSquare} from '@fortawesome/free-solid-svg-icons';
 
 function Menu() {
     return (
@@ -13,12 +13,12 @@ function Menu() {
 				</span>
 				<span>
 					<Link to='/superAdmin/addRestaurant'>
-						<FontAwesomeIcon icon={faPlus} className='plus'/><FontAwesomeIcon icon={faUtensils} />
+						<FontAwesomeIcon icon={faPlus} className='plus'/> <FontAwesomeIcon icon={faUtensils} />
 					</Link>
 				</span>
 				<span>
 					<Link to='/superAdmin/editRestaurant'>
-						<FontAwesomeIcon icon={faUtensils} />
+						<FontAwesomeIcon icon={faPenToSquare} className='plus'/> <FontAwesomeIcon icon={faUtensils} />
 					</Link>
 				</span>
 			</div>

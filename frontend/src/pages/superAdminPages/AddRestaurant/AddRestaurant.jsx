@@ -17,6 +17,13 @@ function AddRestaurant(){
         setSizeTable(e.target.value)
     }
 
+    function editPicPath(e){
+        let str = e.target.value
+        str = str.slice(12)
+        const newStr = 'uploads/' + str
+        setImgUrl(newStr)
+    }
+    
     async function createRestaurant(e){
         e.preventDefault();
         try{
@@ -42,7 +49,7 @@ function AddRestaurant(){
 return (
     <>
     <div className='container'>
-        <form className="add-restaurant" onSubmit={createRestaurant}>
+        <form className="add-restaurant" >
             <h1>Add Restaurant</h1>
             <label htmlFor='restaurantName'>Restaurant Name:</label>
             <input type='text' name='restaurantName' id='restaurantName' className='text' 
@@ -87,9 +94,9 @@ return (
                 </label>
             </div>
             <label htmlFor='imgUrl'>Featured Image URL:</label>
-            <input type='text' name='imgUrl' id='imgUrl' className='text' 
-            onChange={(e)=> setImgUrl(e.target.value)} required></input>
-            <button type='submit' className='submit'>Add Restaurant</button>
+            <input type='file' name='imgUrl' id='imgUrl' className='text' 
+            onChange={editPicPath} required></input>
+            <button className='submit' onClick={createRestaurant}>Add Restaurant</button>
         </form>
     </div>
     </>

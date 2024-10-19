@@ -67,7 +67,6 @@ h1{
     border-radius: 4px;
     transition: 0.2s ease-in;
     width: 25%;
-    margin-top: 32px ;
 }
 .submit:hover{
     background-color: white;

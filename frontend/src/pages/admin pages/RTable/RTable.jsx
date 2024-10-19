@@ -19,16 +19,18 @@ function RTable() {
 
     const fetchReservations = async () => {
         try {
-            const response = await axios.get(`http://localhost:3000/api/reservation/resturant/${encodeURIComponent(restaurantName)}`);
+            const token = localStorage.getItem('token'); // Adjust based on where you store the token
+            const response = await axios.get(`http://localhost:3000/api/reservation/resturant/${encodeURIComponent(restaurantName)}`, {
+                headers: {
+                    Authorization: `Bearer ${token}` // Send the token in the Authorization header
+                }
+            });
             if (response.data && response.data.length > 0) {
-                setReservations(response.data); // Set reservations from API response
-                setFilteredReservations(response.data); // Initially show all reservations
+                setReservations(response.data);
+                setFilteredReservations(response.data);
             } else {
                 throw new Error('No reservations found');
             }
-            // console.log(reservations);
-            // console.log(response.data[1].reservationDate);
-            // console.log(reservations.reservationDate);
         } catch (error) {
             console.error('Error fetching reservations:', error.response ? error.response.data : error.message);
         }

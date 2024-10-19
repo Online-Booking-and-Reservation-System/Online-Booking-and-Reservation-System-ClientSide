@@ -2,7 +2,9 @@ import { toast } from 'react-toastify';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function ChangeData(toEdit, token){
+function ChangeData(toEdit){
+    const token = localStorage.getItem('token')
+
     const [restaurant, setRestaurant] = useState({})
     const [restaurantName, setRestaurantName] = useState('')
     const [fullAddress, setFullAddress] = useState('')
@@ -48,7 +50,7 @@ function ChangeData(toEdit, token){
     async function updateRestaurant(e){
         e.preventDefault();
         try{
-            const res= await axios.patch(`http://localhost:3000/api/resturants/:${id}`,{
+            const res= await axios.patch(`http://localhost:3000/api/resturants/${id}`,{
                 restaurantName,
                 fullAddress,
                 description,
@@ -74,7 +76,7 @@ function ChangeData(toEdit, token){
     async function deleteRestaurant(e){
         e.preventDefault();
         try{
-            const res= await axios.delete(`http://localhost:3000/api/resturants/:${id}`, {
+            const res= await axios.delete(`http://localhost:3000/api/resturants/${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

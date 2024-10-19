@@ -1,25 +1,30 @@
 .container {
+    max-width: 1200px; /* Limiting the width for larger screens */
+    margin: 0 auto; /* Centering the container */
     width: 100%;
     display: flex;
     justify-content: center;
     gap: 5%;
     flex-wrap: wrap;
+    padding: 16px; /* Add padding to prevent elements from touching edges */
     margin-bottom: 60px;
+    height: 520px;
 }
 
 .restaurants-window-Details {
     background-color: white;
-    width: 70%;
+    width: 100%;
+    max-width: 1000px; /* Limit the width for large screens */
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
-    padding: 32px;   
+    padding: 24px;   
     color: #5E5E5E;
 }
 
 .backHeader{
     float: inline-start;
     width: 160px;
-
+    margin-bottom: 16px; /* Adding space under back button */
 
 }
 .restaurants-window-Details button{
@@ -42,7 +47,7 @@ left: 70%;
     font-weight: bold;
     font-size: medium;
     position: relative;
-    bottom: 25px;
+    margin-bottom: 25px;
 
 }
 .line{
@@ -65,11 +70,8 @@ left: 70%;
 }
 
 .resturantName {
-    display: flex;
-    align-items: center;
     font-size: 1.5rem;
     color: #5E5E5E;
-    position: relative;
     padding-top: 5px;
 }
 
@@ -78,8 +80,10 @@ left: 70%;
 }
 
 .resturantImg{
-    position: relative;
-    padding-top: 20px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
 
 }
 .icon{
@@ -93,7 +97,6 @@ img {
     height: 100px;
     object-fit: cover;
     border-radius: 8px;
-    /* border: 1px solid #ED994C; */
 
 }
 .details{
@@ -103,9 +106,10 @@ img {
     padding-bottom: 25px;
 }
 .resturantDescription{
+    text-align:end;
     position: relative;
-    bottom: 86px;
-    left: 40%;
+    bottom: 83px;
+    right: 150px;
 }
 .time-slots {
     width: 100%;
@@ -132,3 +136,118 @@ img {
     color: #5E5E5E; 
 }
 
+/* Responsive Media Queries */
+
+/* For tablets and small screens (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        height: auto;
+    }
+
+    .restaurants-window-Details {
+        max-width: 90%;
+        padding: 16px;
+    }
+
+    .backHeader {
+        width: 140px;
+    }
+
+    .restaurants-window-Details button {
+        left: 60%;
+    }
+
+    .resturantDescription {
+        right: 100px;
+        bottom: 50px;
+    }
+
+    .slot {
+        padding: 8px 16px;
+    }
+
+    img {
+        height: 80px;
+    }
+}
+
+/* For mobile screens (max-width: 768px) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    .restaurants-window-Details {
+        max-width: 100%;
+        padding: 12px;
+    }
+
+    .backHeader {
+        width: 120px;
+    }
+
+    .restaurants-window-Details button {
+        width: 90px;
+        height: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .resturantDescription {
+        position: static;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .time-slots {
+        flex-wrap: wrap;
+    }
+
+    .slot {
+        padding: 6px 12px;
+        margin-bottom: 10px;
+    }
+
+    img {
+        height: 60px;
+    }
+}
+
+/* For very small screens (max-width: 480px) */
+@media (max-width: 480px) {
+    .container {
+        padding: 8px;
+        gap: 2%;
+    }
+
+    .restaurants-window-Details {
+        padding: 8px;
+    }
+
+    .backHeader {
+        font-size: 14px;
+    }
+
+    .restaurants-window-Details button {
+        font-size: small;
+        width: 80px;
+        height: 35px;
+    }
+
+    .resturantDescription {
+        font-size: 14px;
+        text-align: center;
+        position: static;
+    }
+
+    .slot {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+
+    img {
+        height: 50px;
+    }
+}

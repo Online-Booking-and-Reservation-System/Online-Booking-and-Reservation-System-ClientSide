@@ -1,21 +1,134 @@
-.container{
+.container {
     width: 100%;
     display: flex;
     justify-content: center;
     gap: 5%;
-    padding: 32px 0;
     flex-wrap: wrap;
+    margin-bottom: 60px;
 }
-.restaurants-window-Details{
+
+.restaurants-window-Details {
     background-color: white;
-    width: 60%;
+    width: 70%;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     padding: 32px;   
     color: #5E5E5E;
 }
 
-.restaurants-window-Details h2{
-    padding-bottom: 16px;
-    border-bottom: 2px solid#ED994C;
+.backHeader{
+    float: inline-start;
+    width: 160px;
+
+
 }
+.restaurants-window-Details button{
+    width: 100px;
+    height: 50px;
+    color: white;
+    background-color:#ED994C ;
+    cursor: pointer;
+    border: none;
+    border-radius: 10%;
+    font-size: medium;
+    font-weight: bold;
+position: relative;
+bottom: 10px;
+left: 70%;
+    
+}
+.restaurants-window-Details h5 {
+    color: #5E5E5E;
+    font-weight: bold;
+    font-size: medium;
+    position: relative;
+    bottom: 25px;
+
+}
+.line{
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ED994C;
+   
+}
+
+.backIcon {
+    font-size: 18px;       
+    margin-right: 8px;      
+    color: #5E5E5E;
+    transition: all 0.3s ease;  
+    vertical-align: middle; 
+}
+
+.backIcon:hover {
+    color: #ED994C;         
+    transform: scale(1.1);  
+}
+
+.resturantName {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #5E5E5E;
+    position: relative;
+    padding-top: 5px;
+}
+
+.backHeader:hover {
+    color: #ED994C;      
+}
+
+.resturantImg{
+    position: relative;
+    padding-top: 20px;
+
+}
+.icon{
+    color: #ED994C;
+}
+p span{
+    font-weight: bold;
+}
+img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    /* border: 1px solid #ED994C; */
+
+}
+.details{
+    margin-top: 25px;
+}
+.details p {
+    padding-bottom: 25px;
+}
+.resturantDescription{
+    position: relative;
+    bottom: 86px;
+    left: 40%;
+}
+.time-slots {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.slot {
+    background-color: #d3d3d3; 
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+.slot.active {
+    background-color: #ED994C; 
+}
+
+.slot:not(.active) {
+    color: #5E5E5E; 
+}
+

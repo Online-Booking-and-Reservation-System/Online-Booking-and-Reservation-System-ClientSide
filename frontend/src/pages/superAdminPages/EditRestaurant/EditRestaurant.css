@@ -12,6 +12,7 @@ h1{
     display: inline-block;
 }
 .dropdown button{
+    cursor: pointer;
     margin-bottom: 16px;
     border: none;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);

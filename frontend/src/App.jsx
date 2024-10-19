@@ -18,7 +18,7 @@ import Footer from './components/shared components/Footer/Footer';
 import EditRestaurant from './pages/superAdminPages/EditRestaurant/EditRestaurant';
 import EditAdmins from './pages/superAdminPages/EditAdmins/EditAdmins';
 import AddRestaurant from './pages/superAdminPages/AddRestaurant/AddRestaurant';
-import ResturantDetails from './pages/user pages/RestaurantDetails'
+import ResturantDetails from './pages/user pages/ResturantDetails/ResturantDetails';
 function App() {
     return (
         <>

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter , Routes, Route } from 'react-router-dom';
 import Navbar from './components/shared components/Navbar/Navbar';
 import Signup from './components/Signup/Signup';
 import Signin from './components/Signin/Signin';
@@ -18,7 +18,7 @@ import Footer from './components/shared components/Footer/Footer';
 import EditRestaurant from './pages/superAdminPages/EditRestaurant/EditRestaurant';
 import EditAdmins from './pages/superAdminPages/EditAdmins/EditAdmins';
 import AddRestaurant from './pages/superAdminPages/AddRestaurant/AddRestaurant';
-
+import ResturantDetails from './pages/user pages/RestaurantDetails'
 function App() {
     return (
         <>
@@ -27,6 +27,8 @@ function App() {
                 <Routes>
                     <Route path='/' element={<Navbar />}>
                             <Route index element={<Home />} />
+                                <Route path='/resturant/:id' element={<ResturantDetails />} />
+
                             <Route path='/signup' element={<Signup trigger={false} />} />
                             <Route path='/signin' element={<Signin />} />
                             <Route path='/admin/*' element={<Admin />}>
@@ -41,7 +43,6 @@ function App() {
                                 <Route path='editRestaurant' element={<EditRestaurant/>}/>
                                 <Route path='editAdmins' element={<EditAdmins/>}/>
                             </Route>
-                            <Route path='/resturant/:id' element={<restaurantDetails />} />
                     </Route>
                 </Routes>
                 <ToastContainer />

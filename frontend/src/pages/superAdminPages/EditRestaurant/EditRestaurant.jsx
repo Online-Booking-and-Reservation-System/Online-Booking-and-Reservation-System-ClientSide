@@ -60,7 +60,7 @@ return (
                 </div>
                 {selectedOption === null ? (
                     <></>) : (
-                    <ChangeData toEdit={toEdit} token={token}/>)}
+                    <ChangeData toEdit={toEdit}/>)}
         </div> 
     </div>
     </>

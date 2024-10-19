@@ -1,8 +1,59 @@
-import './RList.css';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import './RList.css'; // Add corresponding CSS for styling
 
 function RList() {
+    const [reservations, setReservations] = useState([]);
+    const [filteredReservations, setFilteredReservations] = useState([]);
+    const [searchQuery, setSearchQuery] = useState('');
+    const restaurantName = 'Italian Bistro'; // Replace with the actual restaurant name or get it from user context
+
+    useEffect(() => {
+        fetchReservations();
+    }, []);
+
+    const fetchReservations = async () => {
+        try {
+            const token = localStorage.getItem('token'); // Adjust token retrieval if needed
+            const response = await axios.get(`http://localhost:3000/api/reservation/resturant/${encodeURIComponent(restaurantName)}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+
+            if (response.data) {
+                setReservations(response.data);
+                setFilteredReservations(response.data);
+            }
+        } catch (error) {
+            console.error('Error fetching reservations:', error.response ? error.response.data : error.message);
+        }
+    };
+
+    const handleSearchChange = (e) => {
+        const query = e.target.value;
+        setSearchQuery(query);
+
+        // Filter reservations by customer name
+        const filtered = reservations.filter((reservation) =>
+            reservation.customerName.toLowerCase().includes(query.toLowerCase())
+        );
+        setFilteredReservations(filtered);
+    };
+
     return (
-        <div className="rlist-container">
+        <>
+         <div className="search-filter">
+                    <label className='search-r' htmlFor="customer-search">Search reservations: </label>
+                    <input
+                        type="text"
+                        id="customer-search"
+                        value={searchQuery}
+                        onChange={handleSearchChange}
+                        placeholder="Enter customer name"
+                    />
+                </div>
+            <div className="rlist-container">
             <div className="rlist-inner-container">
                 <table className="rlist-table">
                     <thead className="rlist-thead">
@@ -17,164 +68,32 @@ function RList() {
                         </tr>
                     </thead>
                     <tbody className="rlist-tbody">
-                        <tr className="rlist-row">
-                            <td className="rlist-data">2</td>
-                            <td className="rlist-data">1</td>
-                            <td className="rlist-data">2024-10-15</td>
-                            <td className="rlist-data">18:30</td>
-                            <td className="rlist-data">Pizza Place</td>
-                            <td className="rlist-data">0123456789</td>
-                            <td className="rlist-data">Alice</td>
-                        </tr>
-                        <tr className="rlist-row">
-                            <td className="rlist-data">4</td>
-                            <td className="rlist-data">2</td>
-                            <td className="rlist-data">2024-10-16</td>
-                            <td className="rlist-data">19:00</td>
-                            <td className="rlist-data">Burger Joint</td>
-                            <td className="rlist-data">0123456780</td>
-                            <td className="rlist-data">Bob</td>
-                        </tr>
-                        <tr className="rlist-row">
-                            <td className="rlist-data">3</td>
-                            <td className="rlist-data">1</td>
-                            <td className="rlist-data">2024-10-17</td>
-                            <td className="rlist-data">20:00</td>
-                            <td className="rlist-data">Sushi World</td>
-                            <td className="rlist-data">0123456781</td>
-                            <td className="rlist-data">Charlie</td>
-                        </tr>
-                        <tr className="rlist-row">
-                            <td className="rlist-data">3</td>
-                            <td className="rlist-data">1</td>
-                            <td className="rlist-data">2024-10-17</td>
-                            <td className="rlist-data">20:00</td>
-                            <td className="rlist-data">Sushi World</td>
-                            <td className="rlist-data">0123456781</td>
-                            <td className="rlist-data">Charlie</td>
-                        </tr>
-                        <tr className="rlist-row">
-                            <td className="rlist-data">3</td>
-                            <td className="rlist-data">1</td>
-                            <td className="rlist-data">2024-10-17</td>
-                            <td className="rlist-data">20:00</td>
-                            <td className="rlist-data">Sushi World</td>
-                            <td className="rlist-data">0123456781</td>
-                            <td className="rlist-data">Charlie</td>
-                        </tr>
-                        <tr className="rlist-row">
-                            <td className="rlist-data">3</td>
-                            <td className="rlist-data">1</td>
-                            <td className="rlist-data">2024-10-17</td>
-                            <td className="rlist-data">20:00</td>
-                            <td className="rlist-data">Sushi World</td>
-                            <td className="rlist-data">0123456781</td>
-                            <td className="rlist-data">Charlie</td>
-                        </tr>
-                        <tr className="rlist-row">
-                            <td className="rlist-data">3</td>
-                            <td className="rlist-data">1</td>
-                            <td className="rlist-data">2024-10-17</td>
-                            <td className="rlist-data">20:00</td>
-                            <td className="rlist-data">Sushi World</td>
-                            <td className="rlist-data">0123456781</td>
-                            <td className="rlist-data">Charlie</td>
-                        </tr>
-                        <tr className="rlist-row">
-                            <td className="rlist-data">3</td>
-                            <td className="rlist-data">1</td>
-                            <td className="rlist-data">2024-10-17</td>
-                            <td className="rlist-data">20:00</td>
-                            <td className="rlist-data">Sushi World</td>
-                            <td className="rlist-data">0123456781</td>
-                            <td className="rlist-data">Charlie</td>
-                        </tr>
-                        <tr className="rlist-row">
-                            <td className="rlist-data">3</td>
-                            <td className="rlist-data">1</td>
-                            <td className="rlist-data">2024-10-17</td>
-                            <td className="rlist-data">20:00</td>
-                            <td className="rlist-data">Sushi World</td>
-                            <td className="rlist-data">0123456781</td>
-                            <td className="rlist-data">Charlie</td>
-                        </tr>
-                        <tr className="rlist-row">
-                            <td className="rlist-data">3</td>
-                            <td className="rlist-data">1</td>
-                            <td className="rlist-data">2024-10-17</td>
-                            <td className="rlist-data">20:00</td>
-                            <td className="rlist-data">Sushi World</td>
-                            <td className="rlist-data">0123456781</td>
-                            <td className="rlist-data">Charlie</td>
-                        </tr>
-                        <tr className="rlist-row">
-                            <td className="rlist-data">3</td>
-                            <td className="rlist-data">1</td>
-                            <td className="rlist-data">2024-10-17</td>
-                            <td className="rlist-data">20:00</td>
-                            <td className="rlist-data">Sushi World</td>
-                            <td className="rlist-data">0123456781</td>
-                            <td className="rlist-data">Charlie</td>
-                        </tr>
-                        <tr className="rlist-row">
-                            <td className="rlist-data">3</td>
-                            <td className="rlist-data">1</td>
-                            <td className="rlist-data">2024-10-17</td>
-                            <td className="rlist-data">20:00</td>
-                            <td className="rlist-data">Sushi World</td>
-                            <td className="rlist-data">0123456781</td>
-                            <td className="rlist-data">Charlie</td>
-                        </tr>
-                        <tr className="rlist-row">
-                            <td className="rlist-data">3</td>
-                            <td className="rlist-data">1</td>
-                            <td className="rlist-data">2024-10-17</td>
-                            <td className="rlist-data">20:00</td>
-                            <td className="rlist-data">Sushi World</td>
-                            <td className="rlist-data">0123456781</td>
-                            <td className="rlist-data">Charlie</td>
-                        </tr>
-                        <tr className="rlist-row">
-                            <td className="rlist-data">3</td>
-                            <td className="rlist-data">1</td>
-                            <td className="rlist-data">2024-10-17</td>
-                            <td className="rlist-data">20:00</td>
-                            <td className="rlist-data">Sushi World</td>
-                            <td className="rlist-data">0123456781</td>
-                            <td className="rlist-data">Charlie</td>
-                        </tr>
-                        <tr className="rlist-row">
-                            <td className="rlist-data">3</td>
-                            <td className="rlist-data">1</td>
-                            <td className="rlist-data">2024-10-17</td>
-                            <td className="rlist-data">20:00</td>
-                            <td className="rlist-data">Sushi World</td>
-                            <td className="rlist-data">0123456781</td>
-                            <td className="rlist-data">Charlie</td>
-                        </tr>
-                        <tr className="rlist-row">
-                            <td className="rlist-data">3</td>
-                            <td className="rlist-data">1</td>
-                            <td className="rlist-data">2024-10-17</td>
-                            <td className="rlist-data">20:00</td>
-                            <td className="rlist-data">Sushi World</td>
-                            <td className="rlist-data">0123456781</td>
-                            <td className="rlist-data">Charlie</td>
-                        </tr>
-                        <tr className="rlist-row">
-                            <td className="rlist-data">3</td>
-                            <td className="rlist-data">1</td>
-                            <td className="rlist-data">2024-10-17</td>
-                            <td className="rlist-data">20:00</td>
-                            <td className="rlist-data">Sushi World</td>
-                            <td className="rlist-data">0123456781</td>
-                            <td className="rlist-data">Charlie</td>
-                        </tr>
+                        {filteredReservations.length > 0 ? (
+                            filteredReservations.map((reservation, index) => (
+                                <tr key={index} className="rlist-row">
+                                    <td className="rlist-data">{reservation.numberOfGusts}</td>
+                                    <td className="rlist-data">{reservation.numberOfTables}</td>
+                                    <td className="rlist-data">{reservation.reservationDate}</td>
+                                    <td className="rlist-data">{reservation.reservationTime}</td>
+                                    <td className="rlist-data">{reservation.resturantName}</td>
+                                    <td className="rlist-data">{reservation.phoneNumber}</td>
+                                    <td className="rlist-data">{reservation.customerName}</td>
+                                </tr>
+                            ))
+                        ) : (
+                            <tr>
+                                <td colSpan="7" className="rlist-no-data">No reservations found</td>
+                            </tr>
+                        )}
                     </tbody>
                 </table>
             </div>
         </div>
+
+
+        
+        </>
     );
-}
+};
 
 export default RList;

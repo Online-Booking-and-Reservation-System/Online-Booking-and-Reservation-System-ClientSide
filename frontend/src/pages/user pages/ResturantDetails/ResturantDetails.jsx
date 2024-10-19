@@ -7,7 +7,7 @@ import axios from 'axios';
  function ResturantDetails(){
     const [restaurantDetails,setRestaurantDetails]=useState(null);
     const { id } = useParams(); 
-
+   
 useEffect(()=>{
     async function getRestaurantDetails() {
         try {

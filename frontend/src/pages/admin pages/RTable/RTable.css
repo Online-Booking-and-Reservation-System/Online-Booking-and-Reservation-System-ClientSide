@@ -1,6 +1,7 @@
+
 .rtable-container {
-    width: 95%;
-    height: 300px; 
+    width: 100%;
+    height: 400px; 
     overflow: auto; 
     position: relative;
 }
@@ -133,4 +134,3 @@ table {
 .rtable-container table {
     direction: ltr; 
 }
-

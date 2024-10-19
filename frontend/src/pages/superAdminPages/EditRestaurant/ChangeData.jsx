@@ -2,7 +2,7 @@ import { toast } from 'react-toastify';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function ChangeData(toEdit){
+function ChangeData(toEdit, token){
     const [restaurant, setRestaurant] = useState({})
     const [restaurantName, setRestaurantName] = useState('')
     const [fullAddress, setFullAddress] = useState('')
@@ -48,7 +48,7 @@ function ChangeData(toEdit){
     async function updateRestaurant(e){
         e.preventDefault();
         try{
-            const res= await axios.patch(`http://localhost:3000/api/resturants/${id}`,{
+            const res= await axios.patch(`http://localhost:3000/api/resturants/:${id}`,{
                 restaurantName,
                 fullAddress,
                 description,
@@ -57,6 +57,10 @@ function ChangeData(toEdit){
                 numberOfTables,
                 sizeTable,
                 imgUrl
+            }, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
             });
             if (res.status === 200){
                 toast.success('Restaurant Updated Successfully.')
@@ -70,7 +74,11 @@ function ChangeData(toEdit){
     async function deleteRestaurant(e){
         e.preventDefault();
         try{
-            const res= await axios.delete(`http://localhost:3000/api/resturants/${id}`);
+            const res= await axios.delete(`http://localhost:3000/api/resturants/:${id}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
             if (res.status === 200){
                 toast.success('Restaurant Deleted Successfully.')
             }

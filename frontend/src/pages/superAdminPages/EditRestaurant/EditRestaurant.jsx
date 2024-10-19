@@ -4,15 +4,20 @@ import { useState, useEffect } from 'react'
 import ChangeData from './ChangeData';
 
 function EditRestaurant(){
+    const token = localStorage.getItem('token')
+
     //get restaurants list
     const [restaurants, setRestaurants] = useState([]);
 
     useEffect(()=>{
 		async function getRestaurants(){
 			try{
-				const res= await axios.get('http://localhost:3000/api/resturants/');
+				const res= await axios.get('http://localhost:3000/api/resturants/',{
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
 				setRestaurants(res.data.data.resturants)
-                
 			}
 			catch(err){}
 		}
@@ -55,7 +60,7 @@ return (
                 </div>
                 {selectedOption === null ? (
                     <></>) : (
-                    <ChangeData toEdit={toEdit}/>)}
+                    <ChangeData toEdit={toEdit} token={token}/>)}
         </div> 
     </div>
     </>

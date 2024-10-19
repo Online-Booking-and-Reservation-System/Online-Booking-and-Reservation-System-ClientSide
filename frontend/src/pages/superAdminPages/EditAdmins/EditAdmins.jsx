@@ -1,7 +1,7 @@
 function EditAdmins(){
     return(
         <>
-            <h1>edit</h1>
+            <h1>Add Manager Email</h1>
         </>
     )
 }

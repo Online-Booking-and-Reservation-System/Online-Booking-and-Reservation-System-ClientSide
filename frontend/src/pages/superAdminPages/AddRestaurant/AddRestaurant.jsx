@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { toast } from 'react-toastify';
 
 function AddRestaurant(){
+    const token = localStorage.getItem('token')
+
     const [restaurantName, setRestaurantName] = useState('')
     const [fullAddress, setFullAddress] = useState('')
     const [description, setDescription] = useState('')
@@ -36,6 +38,10 @@ function AddRestaurant(){
                 numberOfTables,
                 sizeTable,
                 imgUrl
+            },{
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
             });
             if (res.status === 201){
                 toast.success('Restaurant Added Successfully.')

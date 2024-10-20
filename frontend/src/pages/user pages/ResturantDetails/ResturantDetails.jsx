@@ -65,18 +65,7 @@ if (!restaurantDetails) {
                    </div>
 
                    </div>
-                  <h5>Available Time Slots</h5>                   
-
-                   <div className="time-slots">
-                      <div className="slot">10:30 AM</div>
-                      <div className="slot active">10:45 PM</div>
-                      <div className="slot">11:30 AM</div>
-                      <div className="slot">11:45 AM</div>
-                      <div className="slot active">12:00 PM</div>
-                      <div className="slot active">01:30 PM</div>
-                      <div className="slot">02:30 PM</div>
-                      <div className="slot active">02:45 PM</div>
-                   </div>
+                
 
              </div>
             

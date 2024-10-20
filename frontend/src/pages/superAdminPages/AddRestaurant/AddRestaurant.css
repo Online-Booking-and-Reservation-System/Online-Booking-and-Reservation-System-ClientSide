@@ -71,7 +71,8 @@ h1{
 .submit:hover{
     background-color: white;
     border: 1px solid #ED994C;
-}.preview{
+}
+.preview{
     max-height: 100px;
     width: max-content;
     margin-bottom: 32px;

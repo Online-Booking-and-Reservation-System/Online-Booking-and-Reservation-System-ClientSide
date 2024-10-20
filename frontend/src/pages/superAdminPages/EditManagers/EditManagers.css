@@ -4,6 +4,8 @@
     gap: 32px;
     display: flex;
     flex-direction: column;
+    overflow: auto;
+    box-sizing: border-box;
 }
 .list table {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);

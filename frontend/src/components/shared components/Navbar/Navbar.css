@@ -782,3 +782,7 @@
         display: none; /* Hide dropdown on larger screens */
     }
 }
+.profile a{
+    text-decoration: none;
+    color: #F49B33;
+}

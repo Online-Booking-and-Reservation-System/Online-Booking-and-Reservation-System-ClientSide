@@ -1,7 +1,3 @@
-.container{
-    width: 100%;
-    min-height: 70vh;
-}
 h1{
     margin-bottom: 16px;
     /* color: #ED994C; */
@@ -39,17 +35,6 @@ h1{
 }
 .dropdown li:hover {
     background: #f0f0f0;
-}
-.edit-restaurant{
-    width: 95%;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 32px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-    padding: 24px;   
 }
 .edit-restaurant input, textarea{
     border: 1px solid #ED994C;;

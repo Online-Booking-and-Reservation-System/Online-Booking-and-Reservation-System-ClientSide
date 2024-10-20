@@ -44,8 +44,8 @@ function EditManagers(){
 
     return(
         <>
-            <div className="container">
-                <div className="add-manager">
+            <div className="containerr">
+                <div className="another-containerr">
                     <h1>All Managers</h1>
                     <div className='list'>
                         <table>

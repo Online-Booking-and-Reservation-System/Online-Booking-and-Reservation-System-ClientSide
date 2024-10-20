@@ -25,13 +25,6 @@ function AddRestaurant(){
         const newStr = 'uploads/' + str
         setImgUrl(newStr)
     }
-
-    const [file, setFile] = useState();
-    function handleChange(e) {
-        console.log(e.target.files);
-        setFile(URL.createObjectURL(e.target.files[0]));
-    }
-    console.log(file)
     
     async function createRestaurant(e){
         e.preventDefault();
@@ -61,8 +54,8 @@ function AddRestaurant(){
 
 return (
     <>
-    <div className='container'>
-        <form className="add-restaurant" >
+    <div className='containerr'>
+        <form className="another-containerr" >
             <h1>Add Restaurant</h1>
             <label htmlFor='restaurantName'>Restaurant Name:</label>
             <input type='text' name='restaurantName' id='restaurantName' className='text' 
@@ -108,7 +101,7 @@ return (
             </div>
             <label htmlFor='imgUrl'>Featured Image URL:</label>
             <input type='file' name='imgUrl' id='imgUrl' className='text' 
-            onChange={handleChange} required></input>
+            onChange={editPicPath} required></input>
             <button className='submit' onClick={createRestaurant}>Add Restaurant</button>
         </form>
     </div>

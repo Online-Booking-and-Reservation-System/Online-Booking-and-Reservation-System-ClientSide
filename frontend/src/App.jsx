@@ -9,7 +9,7 @@ import SuperAdmin from './pages/superAdminPages/SuperAdmin';
 import Contact from './components/shared components/Contact Us/Contact';
 import RTable from './pages/admin pages/RTable/RTable';
 import RList from './pages/admin pages/RList/RList';  
-import Profile from './pages/admin pages/Profile/Profile';
+// import Profile from './pages/admin pages/Profile/Profile';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AuthProvider from './Context/AuthProvider';
@@ -20,6 +20,7 @@ import AddManager from './pages/superAdminPages/AddManager/AddManager';
 import AddRestaurant from './pages/superAdminPages/AddRestaurant/AddRestaurant';
 import ResturantDetails from './pages/user pages/ResturantDetails/ResturantDetails';
 import EditManagers from './pages/superAdminPages/EditManagers/EditManagers';
+import Profile from './components/Profile/Profile';
 function App() {
     return (
         <>
@@ -31,10 +32,11 @@ function App() {
                                 <Route path='/resturant/:id' element={<ResturantDetails />} />
                             <Route path='/signup' element={<Signup trigger={false} />} />
                             <Route path='/signin' element={<Signin />} />
+                            <Route path='profile' element={<Profile/>}/>
                             <Route path='/admin/*' element={<Admin />}>
                                 <Route path='reservationsTable' element={<RTable />} />
                                 <Route path='reservationsList' element={<RList />} />
-                                <Route path='profile' element={<Profile />} />
+                                {/* <Route path='profile' element={<Profile />} /> */}
                             </Route>
                             <Route path='/contactUs' element={<Contact />} />
                             <Route path='/reservation' element={<Reservation />} />

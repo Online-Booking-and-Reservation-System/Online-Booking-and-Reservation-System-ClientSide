@@ -41,8 +41,8 @@ function EditRestaurant(){
 
 return (
     <>
-        <div className='container'>
-            <div className="edit-restaurant">
+        <div className='containerr'>
+            <div className="another-containerr">
                 <h1>Edit Restaurant</h1>
                 <div className="dropdown">
                     <button onClick={toggleDropdown}>

@@ -66,8 +66,8 @@ function AddManager(){
 
     return(
         <>
-            <div className="container">
-                <div className="add-manager">
+            <div className="containerr">
+                <div className="another-containerr">
                     <h1>Add Manager Email</h1>
                     <form onSubmit={addManager}>
                         <div>
@@ -90,7 +90,7 @@ function AddManager(){
                                 </ul>
                             )}
                         </div>
-                        <button type='submit'>Add Manager</button>
+                        <button className='submit'type='submit'>Add Manager</button>
                     </form>
 
                         <div>

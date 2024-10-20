@@ -61,7 +61,7 @@ function Navbar() {
                         <li className="nav-link" onClick={handleLogout}><Link to="/">Sign Out</Link></li>
                         <div className="vertical-line"></div>
                         <div className="user-info user-role">
-                            <p><FaUser /> {role}</p>
+                            <p className="profile"><Link to='/profile'><FaUser /> {role}</Link></p>
                         </div>
                     </>
                 )}
@@ -75,7 +75,7 @@ function Navbar() {
                         <li className="nav-link" onClick={handleLogout}><Link to="/">Sign Out</Link></li>
                         <div className="vertical-line"></div>
                         <div className="user-info user-role">
-                            <p><FaUser /> {role}</p>
+                        <p className="profile"><Link to='/profile'><FaUser /> {role}</Link></p>
                         </div>
                     </>
                 )}
@@ -89,7 +89,7 @@ function Navbar() {
                         <li className="nav-link" onClick={handleLogout}><Link to="/">Sign Out</Link></li>
                         <div className="vertical-line"></div>
                         <div className="user-info user-role">
-                            <p><FaUser /> {role}</p>
+                        <p className="profile"><Link to='/profile'><FaUser /> {role}</Link></p>
                         </div>
                     </>
                  )}
@@ -100,6 +100,7 @@ function Navbar() {
                 <ul className="dropdown-menu">
                     {role === 'user' && (
                         <>
+                            <li onClick={toggleDropdown}><Link to="/profile">Your Profile</Link></li>
                             <li onClick={toggleDropdown}><Link to="/">Home</Link></li>
                             <li onClick={toggleDropdown}><Link to="/reservation">Reservations</Link></li>
                             <li onClick={toggleDropdown}><Link to="/" 
@@ -111,6 +112,7 @@ function Navbar() {
                     )}
                     {role === 'manager' && (
                         <>
+                            <li onClick={toggleDropdown}><Link to="/profile">Your Profile</Link></li>
                             <li onClick={toggleDropdown}><Link to="/admin/reservationsTable">Manager Dashboard</Link></li>
                             <li onClick={toggleDropdown}><Link to="/" 
                                onClick={() => setContactPopup(true) }>
@@ -121,6 +123,7 @@ function Navbar() {
                     )}
                     {role === 'admin' && (
                         <>
+                            <li onClick={toggleDropdown}><Link to="/profile">Your Profile</Link></li>
                             <li onClick={toggleDropdown}><Link to="/superAdmin">Admin Dashboard</Link></li>
                             <li onClick={toggleDropdown}><Link to="/" 
                                onClick={() => setContactPopup(true) }>

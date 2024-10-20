@@ -15,7 +15,7 @@ function RList() {
     const fetchReservations = async () => {
         try {
             const token = localStorage.getItem('token'); // Adjust token retrieval if needed
-            const response = await axios.get(`http://localhost:3000/api/reservation/resturant/${encodeURIComponent(restaurantName)}`, {
+            const response = await axios.get(`http://localhost:3000/api/reservation/reservation/resturant`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

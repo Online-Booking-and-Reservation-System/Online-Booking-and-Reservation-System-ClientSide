@@ -12,7 +12,7 @@ const ReservationPopup =({showPopup,setPopup,restaurantDetails })=>{
         numberOfTables: '',
         reservationDate: '',
         reservationTime: '',
-        restaurantName: restaurantDetails ? restaurantDetails.restaurantName : '',
+        resturantName: restaurantDetails ? restaurantDetails.restaurantName : '',
         amount: '',
 
     });
@@ -52,7 +52,7 @@ return(
                             <label className="si-label">Reservation Time</label>
                             <input type="time" name="reservationTime" required value={formData.reservationTime} onChange={handleChange} />
                             <label className="si-label">Restaurant Name</label>
-                            <input type="text" name="restaurantName" required value={formData.restaurantName} readOnly />
+                            <input type="text" name="resturantName" required value={formData.resturantName} readOnly />
                             <label className="si-label">Amount</label>
                             <input type="number" name="amount" required value={formData.amount} onChange={handleChange} />
                             <button className="book-btn2" type="submit">Book</button>

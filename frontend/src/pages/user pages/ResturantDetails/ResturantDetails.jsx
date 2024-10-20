@@ -43,7 +43,7 @@ if (!restaurantDetails) {
                 
                 <FontAwesomeIcon icon={faArrowLeft}  className='backIcon'/> Go Back
                 </h2 > 
-                <button onClick={()=>setPopup(true)} >Book Now</button>
+                
                 <p className='line'></p>
                 <div className='resturantImg'>
                 <img src={restaurantDetails.imgUrl}></img>
@@ -63,7 +63,7 @@ if (!restaurantDetails) {
                    <p> <FontAwesomeIcon icon={faInfoCircle} className='icon'/>{restaurantDetails.description}</p>
 
                    </div>
-
+                   <button onClick={()=>setPopup(true)} >Book Now</button>
                    </div>
                 
 

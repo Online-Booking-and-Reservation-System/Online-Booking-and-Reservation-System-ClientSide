@@ -28,7 +28,6 @@ function App() {
                     <Route path='/' element={<Navbar />}>
                             <Route index element={<Home />} />
                                 <Route path='/resturant/:id' element={<ResturantDetails />} />
-
                             <Route path='/signup' element={<Signup trigger={false} />} />
                             <Route path='/signin' element={<Signin />} />
                             <Route path='/admin/*' element={<Admin />}>

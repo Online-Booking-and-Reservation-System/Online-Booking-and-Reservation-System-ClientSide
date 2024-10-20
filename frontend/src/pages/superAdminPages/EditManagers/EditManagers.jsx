@@ -24,7 +24,7 @@ function EditManagers(){
 		getManagers();
 	},[]);
 
-    async function deleteManager(e, id){
+    async function deleteManager(id){
         try{
             const res= await axios.delete(`http://localhost:3000/api/managers/${id}
 `, {

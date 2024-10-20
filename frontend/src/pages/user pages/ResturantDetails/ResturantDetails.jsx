@@ -5,6 +5,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './ReturantDetails.css';
 import ReservationPopup from '../../../components/shared components/ReservationPopup/ReservationPopup';
+import Loader from '../../../components/shared components/Loader/Loader';
 
  function ResturantDetails(){
     const [restaurantDetails,setRestaurantDetails]=useState(null);
@@ -16,7 +17,7 @@ useEffect(()=>{
     async function getRestaurantDetails() {
         try {
             const token = localStorage.getItem('token'); 
-            const res = await axios.get(`http://localhost:3000/api/resturants/${id}`, {
+            const res = await axios.get(`http://localhost:3000/api/resturant/${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`, 
                 },
@@ -33,7 +34,7 @@ useEffect(()=>{
     
 if (!restaurantDetails) {
 
-    return <p >Loading......</p>; 
+    return <Loader/>; 
 }
     return(
         <>

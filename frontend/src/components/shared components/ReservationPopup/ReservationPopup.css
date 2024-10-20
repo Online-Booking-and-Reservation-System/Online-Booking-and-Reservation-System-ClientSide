@@ -12,7 +12,6 @@
     z-index: 1000; /
 }
 
-/* Popup Content */
 .popup-content {
     background-color: white;
     padding: 20px; 
@@ -29,7 +28,6 @@
     padding-bottom: 10px;
     color: #ED994C;
 }
-/* Close Button */
 .close-btn {
     position: absolute;
     top: 10px;
@@ -39,7 +37,6 @@
     cursor: pointer;
 }
 
-/* Form styles */
 .reservation input,
 .reservation select {
     width: 100%;
@@ -50,8 +47,6 @@
     margin-top: 5px;
 
 }
-
-/* Book Button */
 .book-btn2 {
     width: 100%;
     padding: 10px;
@@ -64,7 +59,6 @@
     font-size:15px;
 }
 
-/* Media Queries for responsiveness */
 @media (max-width: 768px) {
     .popup-content {
         padding: 15px; 

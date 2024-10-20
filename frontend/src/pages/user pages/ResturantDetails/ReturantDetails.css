@@ -115,7 +115,7 @@ position: relative;
 left: 43%;
 bottom: 25px;
 }
-@media (max-width: 768px) {
+@media  (max-width: 768px) {
     .container {
         flex-direction: column; 
         height: auto; 

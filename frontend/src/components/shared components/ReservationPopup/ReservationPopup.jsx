@@ -5,31 +5,44 @@ import { faClose } from '@fortawesome/free-solid-svg-icons';
 import './ReservationPopup.css'
 const ReservationPopup =({showPopup,setPopup,restaurantDetails })=>{
     const [formData, setFormDate]=useState({
-        customerName: '',
-        customerEmail: '',
-        phoneNumber: '',
-        numberOfGuests: '',
-        numberOfTables: '',
-        reservationDate: '',
-        reservationTime: '',
-        resturantName: restaurantDetails ? restaurantDetails.restaurantName : '',
-        amount: '',
+            customerName:'',
+            customerEmail:'',
+            phoneNumber:'',
+            numberOfGusts:'',
+            numberOfTables:'',
+            reservationDate:'',
+            reservationTime:'',
+            resturantName:restaurantDetails ? restaurantDetails.restaurantName : '',
+            amount:'',
+        
 
     });
     const handleChange=(e)=>{
         const {name,value}=e.target;
         setFormDate({...formData,[name]:value});
     };
-    const handleSubmit= async (e)=>{
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        try{
-            const res =await axios.post('http://localhost:3000/api/reservation/', formData);
+        console.log('Form data:', formData);  // Log the form data for debugging
+        try {
+            const token = localStorage.getItem('token');
+            const res = await axios.post('http://localhost:3000/api/reservation/', formData, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
             const paypalOrderId = res.data.paypalOrderId;
             window.open(`https://www.sandbox.paypal.com/checkoutnow?token=${paypalOrderId}`, '_blank');
-        }catch(error){
-
+        } catch (error) {
+            if (error.res) {
+                console.error('Error response:', error.res.data);
+            } else {
+                console.error('Error message:', error.message);
+            }
         }
-    }
+        
+    };
+
 return(
 <>
 {showPopup && (
@@ -44,7 +57,7 @@ return(
                             <label className="si-label">Phone Number</label>
                             <input type="tel" name="phoneNumber" pattern="^01[0-9]{9}$" required placeholder="01#########" value={formData.phoneNumber} onChange={handleChange} />
                             <label className="si-label">Number Of Guests</label>
-                            <input type="number" name="numberOfGuests" required value={formData.numberOfGuests} onChange={handleChange} />
+                            <input type="number" name="numberOfGusts" required value={formData.numberOfGusts} onChange={handleChange} />
                             <label className="si-label">Number Of Tables</label>
                             <input type="number" name="numberOfTables" required value={formData.numberOfTables} onChange={handleChange} />
                             <label className="si-label">Reservation Date</label>
@@ -55,7 +68,7 @@ return(
                             <input type="text" name="resturantName" required value={formData.resturantName} readOnly />
                             <label className="si-label">Amount</label>
                             <input type="number" name="amount" required value={formData.amount} onChange={handleChange} />
-                            <button className="book-btn2" type="submit">Book</button>
+                            <button className="book-btn2" type="submit" >Book</button>
                         </form>
                         <button className="close-btn" onClick={() => setPopup(false)}> <FontAwesomeIcon icon={faClose}/> </button>
                     </div>

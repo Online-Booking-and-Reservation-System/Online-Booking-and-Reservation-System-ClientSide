@@ -30,13 +30,13 @@ function Contact({ trigger, closeModal }) {
                         <h2 className="contact-title">Contact Us</h2>
                     </div>
                     <div className="contact1">
-                        <p className="email-contact">Our Email: </p>
+                        <p className="email-contact">Our&nbsp;Email: </p>
                         <p className="c-e">
                              <a href="mailto:tableBooky@gmail.com">tableBooky@gmail.com</a>
                         </p>
                     </div>
                     <div className="contact2">
-                        <p className="hotLine-contact">Our HotLine: </p>
+                        <p className="hotLine-contact">Our&nbsp;HotLine: </p>
                         <p className="h-c">181901</p>
                     </div>
                 </div>

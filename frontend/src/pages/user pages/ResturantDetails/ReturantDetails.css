@@ -1,4 +1,5 @@
-.container {
+
+.container{
     max-width: 1200px; /* Limiting the width for larger screens */
     margin: 0 auto; /* Centering the container */
     width: 100%;
@@ -11,7 +12,7 @@
     height: 520px;
 }
 
-.restaurants-window-Details {
+.restaurants-window-Details   {
     background-color: white;
     width: 100%;
     max-width: 1000px; /* Limit the width for large screens */
@@ -251,3 +252,4 @@ img {
         height: 50px;
     }
 }
+

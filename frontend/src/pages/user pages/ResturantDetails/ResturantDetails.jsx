@@ -1,14 +1,16 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faClock, faDeafness, faInfo, faInfoCircle, faList, faListAlt, faListDots, faLocation, faLocationArrow, faLocationPin, faMapLocation, faThList, faTimeline, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { useEffect, useState } from 'react';
+import { faArrowLeft, faClock, faClose, faInfoCircle, faLocationPin } from '@fortawesome/free-solid-svg-icons';
+import { useEffect, useRef, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './ReturantDetails.css';
+import ReservationPopup from '../../../components/shared components/ReservationPopup/ReservationPopup';
 
  function ResturantDetails(){
     const [restaurantDetails,setRestaurantDetails]=useState(null);
     const { id } = useParams(); 
     const navigate = useNavigate(); 
+    const[showPopup, setPopup]=useState(false);
    
 useEffect(()=>{
     async function getRestaurantDetails() {
@@ -30,9 +32,9 @@ useEffect(()=>{
 }, [id]);
     
 if (!restaurantDetails) {
-    return <p>Loading...</p>; 
-}
 
+    return <p >Loading......</p>; 
+}
     return(
         <>
            <div className='container'>
@@ -41,7 +43,7 @@ if (!restaurantDetails) {
                 
                 <FontAwesomeIcon icon={faArrowLeft}  className='backIcon'/> Go Back
                 </h2 > 
-                <button >Book Now</button>
+                <button onClick={()=>setPopup(true)} >Book Now</button>
                 <p className='line'></p>
                 <div className='resturantImg'>
                 <img src={restaurantDetails.imgUrl}></img>
@@ -65,20 +67,31 @@ if (!restaurantDetails) {
                    </div>
                   <h5>Available Time Slots</h5>                   
 
-                   <div class="time-slots">
-                      <div class="slot">10:30 AM</div>
-                      <div class="slot active">10:45 PM</div>
-                      <div class="slot">11:30 AM</div>
-                      <div class="slot">11:45 AM</div>
-                      <div class="slot active">12:00 PM</div>
-                      <div class="slot active">01:30 PM</div>
-                      <div class="slot">02:30 PM</div>
-                      <div class="slot active">02:45 PM</div>
+                   <div className="time-slots">
+                      <div className="slot">10:30 AM</div>
+                      <div className="slot active">10:45 PM</div>
+                      <div className="slot">11:30 AM</div>
+                      <div className="slot">11:45 AM</div>
+                      <div className="slot active">12:00 PM</div>
+                      <div className="slot active">01:30 PM</div>
+                      <div className="slot">02:30 PM</div>
+                      <div className="slot active">02:45 PM</div>
                    </div>
 
              </div>
             
             </div>
+
+
+{showPopup&&(
+    <ReservationPopup  
+    showPopup={showPopup}
+    setPopup={setPopup}
+    restaurantDetails={restaurantDetails}/>
+)
+
+}
+            
         </>
 
     );

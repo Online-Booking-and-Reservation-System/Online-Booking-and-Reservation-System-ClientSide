@@ -82,7 +82,7 @@ function Reservation() {
     const fetchReservations = async () => {
         try {
             const token = localStorage.getItem('token'); // Adjust token retrieval if needed
-            const response = await axios.get(`http://localhost:3000/api/reservation/${encodeURIComponent(customerName)}`, {
+            const response = await axios.get(`http://localhost:3000/api/reservation/customer`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

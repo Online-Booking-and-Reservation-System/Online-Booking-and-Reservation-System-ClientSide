@@ -1,13 +1,13 @@
 
 .container{
-    max-width: 1200px; /* Limiting the width for larger screens */
-    margin: 0 auto; /* Centering the container */
+    max-width: 1200px; 
+    margin: 0 auto; 
     width: 100%;
     display: flex;
     justify-content: center;
     gap: 5%;
     flex-wrap: wrap;
-    padding: 16px; /* Add padding to prevent elements from touching edges */
+    padding: 16px; 
     margin-bottom: 60px;
     height: 520px;
 }
@@ -15,7 +15,7 @@
 .restaurants-window-Details   {
     background-color: white;
     width: 100%;
-    max-width: 1000px; /* Limit the width for large screens */
+    max-width: 1000px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     padding: 24px;   
@@ -25,7 +25,7 @@
 .backHeader{
     float: inline-start;
     width: 160px;
-    margin-bottom: 16px; /* Adding space under back button */
+    margin-bottom: 16px;
 
 }
 .restaurants-window-Details button{
@@ -112,35 +112,15 @@ img {
     bottom: 83px;
     right: 150px;
 }
-.time-slots {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-}
 
-.slot {
-    background-color: #d3d3d3; 
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-family: Arial, sans-serif;
-    color: white;
-    text-align: center;
-    cursor: pointer;
-}
 
-.slot.active {
-    background-color: #ED994C; 
-}
 
 .slot:not(.active) {
     color: #5E5E5E; 
 }
 
-/* Responsive Media Queries */
 
-/* For tablets and small screens (max-width: 1024px) */
-@media (max-width: 1024px) {
+@media only screen and (max-width: 1024px) {
     .container {
         height: auto;
     }
@@ -172,8 +152,7 @@ img {
     }
 }
 
-/* For mobile screens (max-width: 768px) */
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     .container {
         flex-direction: column;
         align-items: center;
@@ -186,7 +165,7 @@ img {
     }
 
     .backHeader {
-        width: 120px;
+        width: 150px;
     }
 
     .restaurants-window-Details button {
@@ -216,8 +195,7 @@ img {
     }
 }
 
-/* For very small screens (max-width: 480px) */
-@media (max-width: 480px) {
+@media only screen and (max-width: 480px) {
     .container {
         padding: 8px;
         gap: 2%;

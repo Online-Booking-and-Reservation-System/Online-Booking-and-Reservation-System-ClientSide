@@ -8,3 +8,7 @@
 body{
     background-color: #f0eded;
 }
+
+button{
+    cursor: pointer;
+}

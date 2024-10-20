@@ -12,7 +12,7 @@ h1{
     display: flex;
     flex-direction: column;
     gap: 8px;
-    margin-bottom: 64px;
+    margin-bottom: 32px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     padding: 24px;   
@@ -71,6 +71,10 @@ h1{
 .submit:hover{
     background-color: white;
     border: 1px solid #ED994C;
+}.preview{
+    max-height: 100px;
+    width: max-content;
+    margin-bottom: 32px;
 }
 @media (max-width: 1200px) {
 .time{

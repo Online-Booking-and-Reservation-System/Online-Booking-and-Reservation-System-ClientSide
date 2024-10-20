@@ -1,0 +1,85 @@
+.container{
+    width: 100%;
+}
+h1{
+    margin-bottom: 16px;
+    /* color: #ED994C; */
+    font-weight: bolder;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown div{
+    cursor: pointer;
+    margin-bottom: 16px;
+    border: none;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    padding: 8px;
+    border-radius: 8px;
+    font-weight: bold;
+    width: 50vw;
+    text-align: start;
+}
+.dropdown ul {
+    position: absolute;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: white;
+    border: 1px solid #ccc;
+    width: 50vw;
+    z-index: 1;
+}
+.dropdown li {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+.dropdown li:hover {
+    background: #f0f0f0;
+}
+.add-manager{
+    width: 95%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 32px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 24px;   
+    min-height: 60vh;
+}
+.add-manager form{
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+}
+.add-manager form button{
+    width:30%;
+    background-color: #ED994C;
+    border: 0;
+    padding: 8px 32px;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: 0.2s ease-in;
+    margin-top: 32px;
+}
+.add-manager form button:hover{
+    background-color: white;
+    border: 1px solid #ED994C;
+}
+.add-manager input{
+    border: 1px solid #ED994C;;
+}
+.add-manager label{
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+@media (max-width: 768px) {
+    .add-manager form button{
+        width: fit-content; ;
+        padding: 8px;
+    }
+}

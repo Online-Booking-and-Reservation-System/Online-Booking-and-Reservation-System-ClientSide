@@ -16,9 +16,10 @@ import AuthProvider from './Context/AuthProvider';
 import './App.css';
 import Footer from './components/shared components/Footer/Footer';
 import EditRestaurant from './pages/superAdminPages/EditRestaurant/EditRestaurant';
-import EditAdmins from './pages/superAdminPages/EditAdmins/EditAdmins';
+import AddManager from './pages/superAdminPages/AddManager/AddManager';
 import AddRestaurant from './pages/superAdminPages/AddRestaurant/AddRestaurant';
 import ResturantDetails from './pages/user pages/ResturantDetails/ResturantDetails';
+import EditManagers from './pages/superAdminPages/EditManagers/EditManagers';
 function App() {
     return (
         <>
@@ -41,7 +42,8 @@ function App() {
                             <Route path='/superAdmin/*' element={<SuperAdmin />}>
                                 <Route path='addRestaurant' element={<AddRestaurant/>}/>
                                 <Route path='editRestaurant' element={<EditRestaurant/>}/>
-                                <Route path='editAdmins' element={<EditAdmins/>}/>
+                                <Route path='addManager' element={<AddManager/>}/>
+                                <Route path='editManagers' element={<EditManagers/>}/>
                             </Route>
                     </Route>
                 </Routes>

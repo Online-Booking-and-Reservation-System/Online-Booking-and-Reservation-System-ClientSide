@@ -6,7 +6,7 @@ function RList() {
     const [reservations, setReservations] = useState([]);
     const [filteredReservations, setFilteredReservations] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
-    const restaurantName = 'Italian Bistro'; // Replace with the actual restaurant name or get it from user context
+    const restaurantName = localStorage.getItem('restaurantName'); // Replace with the actual restaurant name or get it from user context
 
     useEffect(() => {
         fetchReservations();
@@ -58,13 +58,13 @@ function RList() {
                 <table className="rlist-table">
                     <thead className="rlist-thead">
                         <tr className="rlist-header-row">
-                            <th className="rlist-header">Number of Guests</th>
-                            <th className="rlist-header">Number of Tables</th>
-                            <th className="rlist-header">Reservation Date</th>
-                            <th className="rlist-header">Reservation Time</th>
-                            <th className="rlist-header">Restaurant Name</th>
-                            <th className="rlist-header">Phone Number</th>
-                            <th className="rlist-header">Customer Name</th>
+                            <th className="rlist-header">Number&nbsp;of&nbsp;Guests</th>
+                            <th className="rlist-header">Number&nbsp;of&nbsp;Tables</th>
+                            <th className="rlist-header">Reservation&nbsp;Date</th>
+                            <th className="rlist-header">Reservation&nbsp;Time</th>
+                            <th className="rlist-header">Restaurant&nbsp;Name</th>
+                            <th className="rlist-header">Phone&nbsp;Number</th>
+                            <th className="rlist-header">Customer&nbsp;Name</th>
                         </tr>
                     </thead>
                     <tbody className="rlist-tbody">

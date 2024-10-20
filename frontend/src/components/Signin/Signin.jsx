@@ -20,12 +20,21 @@ function Signin({ trigger, closeModal, openSignupPopup }) {
            });
             const token = response.data.data.token; 
             const decodedToken = JSON.parse(atob(token.split('.')[1])); 
-            const role = decodedToken.role; 
+            const role = decodedToken.role;
+            const name = decodedToken.name; 
+            const rName = decodedToken.restaurantName;
+            const id = decodedToken.id;
            closeModal();
-          //  console.log(decodedToken);
-          //  console.log(role);
+          console.log(decodedToken);
+
+         if(role == 'user'){
+            localStorage.setItem('name', name); 
+         }else if(role === 'manager'){
+            localStorage.setItem('restaurantName' , rName );
+         }
            localStorage.setItem('token', token);
            localStorage.setItem('role', role); 
+           localStorage.setItem('id', id); 
            toast.success('sign in successful!')
           //  console.log('Signed in successfully:', response);
        } catch (error) {

@@ -47,19 +47,25 @@ function EditManagers(){
             <div className="container">
                 <div className="add-manager">
                     <h1>All Managers</h1>
-                        <div className='list'>
-                            
+                    <div className='list'>
+                        <table>
+                            <tr>
+                                <th>Email</th>
+                                <th>Restaurant Name</th>
+                                <th>Delete Manager</th>
+                            </tr>
                             {
                                 managers.map((manager)=>(
-                                    <ul key={manager._id}>
-                                        <li>{manager.email}</li>
-                                        <li>{manager.restaurantName}</li>
-                                        <button onClick={()=> deleteManager(manager._id)}>delete</button>
-                                    </ul>
+                                    <tr key={manager._id}>
+                                        <td>{manager.email}</td>
+                                        <td>{manager.restaurantName}</td>
+                                        <td><button onClick={()=> deleteManager(manager._id)}>Delete</button></td>
+                                    </tr>
                                     
                                 ))
                             }
-                        </div>
+                            </table>
+                    </div>
                 </div>
             </div>
 

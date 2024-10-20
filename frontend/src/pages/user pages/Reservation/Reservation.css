@@ -1,12 +1,28 @@
 .reservation-container {
-    width: 95%;
+    overflow-y: auto; /* Enable vertical scrolling */
+    position: relative;
     padding: 20px;
+    width: 95%;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+    margin: 35px;
+}
+
+.r-inner-container{
+    max-height: 500px; /* Set a maximum height for the container */
+    direction: ltr; 
 }
 
 .reservation-table {
+
     width: 100%;
     border-collapse: collapse;
-    margin: 20px;
+}
+
+.r-header-row{
+    background-color: #646363;
 }
 
 .reservation-table th, .reservation-table td {
@@ -15,18 +31,26 @@
     text-align: left;
 }
 
-.reservation-table th {
-    background-color: #ffffff;
-    font-weight: bold;
+.reservation-table td {
+   cursor: pointer;
 }
 
+
+.reservation-table th {
+    background-color: #494949;
+    color: #fff;
+    padding: 15px;
+    text-align: left;
+    font-size: 1rem;
+}
+/* 
 .reservation-table tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
 .reservation-table td{
     cursor: pointer;
-}
+} */
 
 .reservation-table tr:hover {
     background-color: #f1f1f1;

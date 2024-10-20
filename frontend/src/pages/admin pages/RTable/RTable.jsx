@@ -72,9 +72,9 @@ function RTable() {
     };
 
     return (
-        <div className="rtable-container">
-            <div className="date-filter">
-                <label htmlFor="reservation-date">Select Date: </label>
+        <div className="r-t-container"> 
+         <div className="date-filter">
+                <label className='date-select' htmlFor="reservation-date">Select Date: </label>
                 <input
                     type="date"
                     className="date-input"
@@ -84,8 +84,9 @@ function RTable() {
                 />
             </div>
 
+        <div className="rtable-container">
             <div className="reservation-table">
-                <table>
+                <table className='rtable-t'>
                     <thead>
                         <tr>
                             {timeSlots.map((timeSlot, index) => (
@@ -127,7 +128,8 @@ function RTable() {
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div>        </div>
+
     );
 }
 

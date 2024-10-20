@@ -17,7 +17,7 @@ useEffect(()=>{
     async function getRestaurantDetails() {
         try {
             const token = localStorage.getItem('token'); 
-            const res = await axios.get(`http://localhost:3000/api/resturant/${id}`, {
+            const res = await axios.get(`http://localhost:3000/api/resturants/${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`, 
                 },

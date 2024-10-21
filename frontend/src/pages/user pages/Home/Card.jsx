@@ -2,7 +2,9 @@ function Card({restaurant , onClick}){
     return(
         <>
             <div className="card" onClick={onClick}>
-                <img src={restaurant.imgUrl}></img>
+            {restaurant.imgUrl && (
+                            <img src={restaurant.imgUrl} alt={restaurant.restaurantName} />
+                        )}
                 <h3>{restaurant.restaurantName}</h3>
                 <div>
                     <p>{restaurant.fullAddress}</p>

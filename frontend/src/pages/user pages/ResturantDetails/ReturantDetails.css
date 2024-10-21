@@ -20,14 +20,14 @@
     border-radius: 4px;
     padding: 24px;   
     color: #5E5E5E;
-    height: 500px;
+    height: auto;
 
 
 }
 
 .backHeader{
     float: inline-start;
-    width: 160px;
+    width: auto;
     margin-bottom: 16px;
 
 }
@@ -71,10 +71,17 @@
 
 .resturantImg{
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+    height: 250px; 
     margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 8px;
 
+}
+.resturantImg img {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+height: 290px;
 }
 .icon{
     color: #ED994C;
@@ -82,13 +89,7 @@
 p span{
     font-weight: bold;
 }
-img {
-    width: 100%;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 8px;
 
-}
 .details{
     margin-top: 25px;
 }
@@ -99,7 +100,7 @@ img {
     text-align:end;
     position: relative;
     bottom: 83px;
-    right: 150px;
+    right: 10px;
 }
 .restaurants-window-Details button{
     width: 100px;
@@ -141,7 +142,7 @@ bottom: 25px;
     }
 
     .backHeader {
-        width: 140px;
+        width: auto;
     }
 
     .resturantName {
@@ -149,7 +150,7 @@ bottom: 25px;
     }
 
     img {
-        height: 80px; 
+        height: auto; 
     }
 }
 
@@ -169,7 +170,7 @@ bottom: 25px;
     }
 
     img {
-        height: 70px;
+        height: auto;
     }
 
     .restaurants-window-Details button {
@@ -181,7 +182,7 @@ bottom: 25px;
     }
 
     .backHeader {
-        width: 150px; 
+        width: auto; 
     }
 
     .resturantDescription {

@@ -13,9 +13,7 @@ function Home() {
 		async function getRestaurants(){
 			try{
 				const res= await axios.get('http://localhost:3000/api/resturants/');
-				console.log('API Response:', res.data); // Log the full response
 				setRestaurants(res.data.data.updatedRestaurants);
-				console.log('Restaurants State:', res.data.data.updatedRestaurants); // Log state after setting
 			}
 			catch(err){
 				console.error("Error fetching restaurants:", err);

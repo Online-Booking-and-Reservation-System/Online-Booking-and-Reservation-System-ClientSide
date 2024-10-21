@@ -91,52 +91,68 @@ function ChangeData(toEdit){
 
     return(
         <>
-            <form className='form' onSubmit={updateRestaurant}>
-                <label htmlFor='restaurantName'>Restaurant Name:</label>
-                <input type='text' name='restaurantName' id='restaurantName' className='text' value={restaurantName || ''}
-                onChange={(e)=> setRestaurantName(e.target.value)} required></input>
+            <form className='edit-restaurant' onSubmit={updateRestaurant}>
+                <div className='sectioning'>
+                    <label htmlFor='restaurantName'>Restaurant Name:</label>
+                    <input type='text' name='restaurantName' id='restaurantName' className='text' value={restaurantName || ''}
+                    onChange={(e)=> setRestaurantName(e.target.value)} required></input>
+                </div>
 
-                <label htmlFor='fullAddress'>Restaurant Address:</label>
-                <input type='text' name='fullAddress' id='fullAddress' className='text' value={fullAddress || ''}
-                onChange={(e)=> setFullAddress(e.target.value)} required></input>
+                <div className='sectioning'>
+                    <label htmlFor='fullAddress'>Restaurant Address:</label>
+                    <input type='text' name='fullAddress' id='fullAddress' className='text' value={fullAddress || ''}
+                    onChange={(e)=> setFullAddress(e.target.value)} required></input>
+                </div>
 
-                <label htmlFor='description'>Restaurant Description:</label>
-                <textarea name='description' id='description' className='text' value={description || ''}
-                onChange={(e)=> setDescription(e.target.value)} required></textarea>
+                <div className='sectioning'>
+                    <label htmlFor='description'>Restaurant Description:</label>
+                    <textarea name='description' id='description' className='text' value={description || ''}
+                    onChange={(e)=> setDescription(e.target.value)} required></textarea>
+                </div>
 
-                <label>Select Time (Between 1 and 12):</label>
-                <div className='time'>
-                    <div>
-                    <input type='number' name='openTime' id='openTime' placeholder='Opening Time' min={1} max={12} value={openTime || ''}
-                    onChange={(e)=> setOpenTime(e.target.value)} required></input>
-                    <p>AM</p>
+                <div className='sectioning'>
+                    <label>Select Time (Between 1 and 12):</label>
+                    <div className='time'>
+                        <div>
+                        <input type='number' name='openTime' id='openTime' placeholder='Opening Time' min={1} max={12} value={openTime || ''}
+                        onChange={(e)=> setOpenTime(e.target.value)} required></input>
+                        <p>AM</p>
+                        </div>
+                        <div>
+                        <input type='number' name='closeTime' id='closeTime' placeholder='Closing Time' min={1} max={12} value={closeTime || ''}
+                        onChange={(e)=> setCloseTime(e.target.value)} required></input>
+                        <p>PM</p>
+                        </div>
                     </div>
-                    <div>
-                    <input type='number' name='closeTime' id='closeTime' placeholder='Closing Time' min={1} max={12} value={closeTime || ''}
-                    onChange={(e)=> setCloseTime(e.target.value)} required></input>
-                    <p>PM</p>
+                </div>
+                
+                <div className='sectioning'>
+                    <label>Number of Tables:</label>
+                    <input type='number' name='numberOfTables' id='numberOfTables'className='text' min={1} value={numberOfTables || ''}
+                    onChange={(e)=> setNumberOfTables(e.target.value)} required></input>
+                </div>
+
+                <div className='sectioning'>
+                    <label htmlFor="sizeTable">Table Size:</label>
+                    <div className='size'>
+                        <label>
+                            <input type="radio" name="sizeTable" value="Small" onChange={optionChange}/>Small
+                        </label>
+                        <label>
+                            <input type="radio" name="sizeTable" value="Medium" onChange={optionChange}/>Medium
+                        </label>
+                        <label>
+                            <input type="radio" name="sizeTable" value="Large" onChange={optionChange}/>Large
+                        </label>
                     </div>
                 </div>
 
-                <label>Number of Tables:</label>
-                <input type='number' name='numberOfTables' id='numberOfTables'className='text' min={1} value={numberOfTables || ''}
-                onChange={(e)=> setNumberOfTables(e.target.value)} required></input>
-
-                <label htmlFor="sizeTable">Table Size:</label>
-                <div className='size'>
-                    <label>
-                        <input type="radio" name="sizeTable" value="Small" onChange={optionChange}/>Small
-                    </label>
-                    <label>
-                        <input type="radio" name="sizeTable" value="Medium" onChange={optionChange}/>Medium
-                    </label>
-                    <label>
-                        <input type="radio" name="sizeTable" value="Large" onChange={optionChange}/>Large
-                    </label>
+                <div className='sectioning'>
+                    <label htmlFor='imgUrl'>Featured Image URL:</label>
+                    <input type='file' name='imgUrl' id='imgUrl' className='text'
+                    onChange={editPicPath}></input>
                 </div>
-                <label htmlFor='imgUrl'>Featured Image URL:</label>
-                <input type='file' name='imgUrl' id='imgUrl' className='text'
-                onChange={editPicPath}></input>
+
                 <div className='btns'>
                     <button type='submit' className='submit'>Save Changes</button>
                     <button className='delete' onClick={deleteRestaurant}>Delete Restaurant</button>

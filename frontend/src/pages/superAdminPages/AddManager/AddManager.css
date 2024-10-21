@@ -1,10 +1,21 @@
-.container{
-    width: 100%;
+.add-manager{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
-h1{
-    margin-bottom: 16px;
-    /* color: #ED994C; */
-    font-weight: bolder;
+.add-manager div{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.add-manager input{
+    border: 1px solid #ED994C;
+    padding: 8px;
+    border-radius: 8px;
+    width: 50vw;
+}
+.add-manager label{
+    font-weight: bold;
 }
 .dropdown {
     position: relative;
@@ -12,7 +23,6 @@ h1{
 }
 .dropdown div{
     cursor: pointer;
-    margin-bottom: 16px;
     border: none;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
     background-color: white;
@@ -38,36 +48,4 @@ h1{
 }
 .dropdown li:hover {
     background: #f0f0f0;
-}
-.another-containerr form{
-    gap: 16px;
-    display: flex;
-    flex-direction: column;
-}
-.another-containerr form button{
-    width:30%;
-    background-color: #ED994C;
-    border: 0;
-    padding: 8px 32px;
-    font-size: 16px;
-    border-radius: 4px;
-    transition: 0.2s ease-in;
-    margin-top: 32px;
-}
-.another-containerr form button:hover{
-    background-color: white;
-    border: 1px solid #ED994C;
-}
-.another-containerr input{
-    border: 1px solid #ED994C;;
-}
-.another-containerr label{
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-@media (max-width: 768px) {
-    .another-containerr form button{
-        width: fit-content; ;
-        padding: 8px;
-    }
 }

@@ -1,46 +1,25 @@
-.container{
-    width: 100%;
-}
-h1{
-    margin-bottom: 16px;
-    /* color: #ED994C; */
-    font-weight: bolder;
-}
 .add-restaurant{
-    width: 95%;
-    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.sectioning{
     display: flex;
     flex-direction: column;
     gap: 8px;
-    margin-bottom: 32px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-    padding: 24px;   
 }
-.add-restaurant input, textarea{
-    border: 1px solid #ED994C;;
+.add-restaurant input, .add-restaurant textarea{
+    border: 1px solid #ED994C;
+    padding: 8px;
+    border-radius: 8px;
+    width: 50vw;
 }
 .add-restaurant label{
     font-weight: bold;
-    margin-bottom: 8px;
-}
-.text{
-    margin-bottom: 16px;
-    padding: 8px;
-    border-radius: 8px;
-    width: 50vw;
-}
-.add-restaurant textarea{
-    margin-bottom: 16px;
-    padding: 8px;
-    border-radius: 8px;
-    width: 50vw;
 }
 .time{
-    align-items: center;
     display: flex;
     gap: 16px;
-    margin-bottom: 16px;
 }
 .time input{
     padding: 8px;
@@ -55,27 +34,13 @@ h1{
 .size label{
     font-weight: lighter;
 }
+.size input{
+    width: fit-content;
+}
 .size{
     display: flex;
-    gap: 4vw
-}
-.submit{
-    background-color: #ED994C;
-    border: 0;
-    padding: 8px 32px;
-    font-size: 16px;
-    border-radius: 4px;
-    transition: 0.2s ease-in;
-    width: 25%;
-}
-.submit:hover{
-    background-color: white;
-    border: 1px solid #ED994C;
-}
-.preview{
-    max-height: 100px;
-    width: max-content;
-    margin-bottom: 32px;
+    padding: 8px 0;
+    gap: 4%;
 }
 @media (max-width: 1200px) {
 .time{
@@ -88,10 +53,6 @@ h1{
 }
 }
 @media (max-width: 768px) {
-    .submit{
-        width: fit-content; ;
-        padding: 8px;
-    }
     .time input{
         width: 50vw;
     }

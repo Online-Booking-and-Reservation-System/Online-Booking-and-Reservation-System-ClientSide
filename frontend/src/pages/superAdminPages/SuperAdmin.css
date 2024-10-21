@@ -19,6 +19,11 @@
     padding: 24px;  
     min-height: 59vh; 
 }
+.another-containerr h1{
+    margin-bottom: 16px;
+    /* color: #ED994C; */
+    font-weight: bolder;
+}
 .menu{
     width: 10%;
     background-color: white;
@@ -50,6 +55,35 @@
 .plus{
     font-size: 20px;
 }
+.submit{
+    width: fit-content;
+    border: 0;
+    background-color: #ED994C;
+    padding: 8px 32px;
+    margin-top: 16px;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: 0.2s ease-in;
+}
+.submit:hover{
+    background-color: white;
+    border: 1px solid #ED994C;
+}
+.delete{
+    border: 1px solid rgb(200, 75, 75);
+    background-color: white;
+    padding: 8px 32px;
+    margin-top: 16px;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: 0.2s ease-in;    
+    width: fit-content;
+}
+.delete:hover{
+    background-color: rgb(200, 75, 75);
+    color: white;
+
+}
 @media (max-width: 1200px) {
     .menu a{
         font-size: 24px;
@@ -72,6 +106,9 @@
     }
     .plus{
         font-size: 8px;
+    }
+    .submit{
+        padding: 8px;
     }
     }
 @media (max-width: 620px) {

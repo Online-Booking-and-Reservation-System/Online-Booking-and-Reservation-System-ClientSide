@@ -1,7 +1,22 @@
-h1{
-    margin-bottom: 16px;
-    /* color: #ED994C; */
-    font-weight: bolder;
+.edit-restaurant{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.edit-restaurant input, .edit-restaurant textarea{
+    border: 1px solid #ED994C;
+    border: 1px solid #ED994C;
+    padding: 8px;
+    border-radius: 8px;
+    width: 50vw;
+}
+.edit-restaurant label{
+    font-weight: bold;
+}
+.btns{
+    display: flex;
+    width: 50vw;
+    justify-content: space-between;
 }
 .dropdown {
     position: relative;
@@ -35,88 +50,6 @@ h1{
 }
 .dropdown li:hover {
     background: #f0f0f0;
-}
-.edit-restaurant input, textarea{
-    border: 1px solid #ED994C;;
-}
-.edit-restaurant label{
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-.form{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-.text{
-    margin-bottom: 16px;
-    padding: 8px;
-    border-radius: 8px;
-    width: 50vw;
-}
-.edit-restaurant textarea{
-    margin-bottom: 16px;
-    padding: 8px;
-    border-radius: 8px;
-    width: 50vw;
-}
-.time{
-    align-items: center;
-    display: flex;
-    gap: 16px;
-    margin-bottom: 16px;
-}
-.time input{
-    padding: 8px;
-    border-radius: 8px;
-    width: 10vw;
-}
-.time div{
-    display: flex;
-    gap: 8px;
-    align-items: center;
-}
-.size label{
-    font-weight: lighter;
-}
-.size{
-    display: flex;
-    gap: 4vw
-}
-.btns{
-    margin: 0;
-    padding: 0;
-    display: flex;
-    width: 50vw;
-    justify-content: space-between;
-}
-.submit{
-    background-color: #ED994C;
-    border: 0;
-    padding: 8px 32px;
-    font-size: 16px;
-    border-radius: 4px;
-    transition: 0.2s ease-in;
-    width: 30%;
-    margin: 0;
-}
-.submit:hover{
-    background-color: white;
-    border: 1px solid #ED994C;
-}
-.delete{
-    border: 1px solid rgb(200, 75, 75);
-    background-color: white;
-    padding: 8px 32px;
-    font-size: 16px;
-    border-radius: 4px;
-    transition: 0.2s ease-in;
-    width: 30%;
-}
-.delete:hover{
-    background-color: rgb(200, 75, 75);
-    color: white;
-
 }
 
 @media (max-width: 1200px) {

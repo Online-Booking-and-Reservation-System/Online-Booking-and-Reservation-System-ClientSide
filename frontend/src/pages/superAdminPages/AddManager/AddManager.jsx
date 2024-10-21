@@ -69,28 +69,30 @@ function AddManager(){
             <div className="containerr">
                 <div className="another-containerr">
                     <h1>Add Manager Email</h1>
-                    <form onSubmit={addManager}>
+                    <form className="add-manager"onSubmit={addManager}>
                         <div>
                             <label htmlFor='email'>Email:</label>
+                            <input type='text' name='email' id='email'
+                            onChange={(e)=> setEmail(e.target.value)} required></input>
                         </div>
-                        <input type='text' name='email' id='email' className='text' 
-                        onChange={(e)=> setEmail(e.target.value)} required></input>
-                        <label>Restaurant:</label>
-                        <div className="dropdown">
-                            <div onClick={toggleDropdown}>
-                                {selectedOption || 'Restaurant'}
+                        <div>
+                            <label>Restaurant:</label>
+                            <div className="dropdown">
+                                <div onClick={toggleDropdown}>
+                                    {selectedOption || 'Restaurant'}
+                                </div>
+                                {isOpen && (
+                                    <ul>
+                                        {restaurants.map((option) => (
+                                            <li key={option._id} onClick={() => handleOptionClick(option)}>
+                                                {option.restaurantName}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
                             </div>
-                            {isOpen && (
-                                <ul>
-                                    {restaurants.map((option) => (
-                                        <li key={option._id} onClick={() => handleOptionClick(option)}>
-                                            {option.restaurantName}
-                                        </li>
-                                    ))}
-                                </ul>
-                            )}
                         </div>
-                        <button className='submit'type='submit'>Add Manager</button>
+                        <button className='submit' type='submit'>Add Manager</button>
                     </form>
 
                         <div>

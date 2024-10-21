@@ -26,8 +26,6 @@ function Navbar() {
     const handleLogout = () => {
         localStorage.removeItem('token'); // Remove the token
         localStorage.removeItem('role');
-        localStorage.removeItem('restaurantName');
-        localStorage.removeItem('name');
         localStorage.removeItem('id');
         setIsDropdownOpen(false);
         navigate('/'); // Redirect to home

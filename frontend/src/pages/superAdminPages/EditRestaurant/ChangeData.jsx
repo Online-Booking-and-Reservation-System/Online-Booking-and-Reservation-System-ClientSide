@@ -41,10 +41,8 @@ function ChangeData(toEdit){
     }
 
     function editPicPath(e){
-        let str = e.target.value
-        str = str.slice(12)
-        const newStr = 'uploads/' + str
-        setImgUrl(newStr)
+        const str = (e.target.files[0].name)
+        setImgUrl('uploads/' + str)
     }
 
     async function updateRestaurant(e){

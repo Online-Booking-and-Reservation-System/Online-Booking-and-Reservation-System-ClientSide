@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 import './RTable.css';
 import { MdTableBar } from "react-icons/md";
 import { FaCheck } from "react-icons/fa";
+import Loader from '../../../components/shared components/Loader/Loader';
 import ReservationPopup from '../../../components/shared components/ReservationPopup/ReservationPopup';
 
 function RTable() {
@@ -11,6 +13,7 @@ function RTable() {
     const [selectedDate, setSelectedDate] = useState(''); // Selected date
     const [popupVisible, setPopupVisible] = useState(false); // Popup visibility state
     const [selectedTimeSlot, setSelectedTimeSlot] = useState('');
+    const [loading, setLoading] = useState(true);
     const restaurantName = 'Italian Bistro'; // Update this with the actual restaurant name
 
     const timeSlots = ['10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'];
@@ -35,6 +38,8 @@ function RTable() {
             }
         } catch (error) {
             console.error('Error fetching reservations:', error.response ? error.response.data : error.message);
+        }finally {
+            setLoading(false); // Set loading to false when data is fetched or an error occurs
         }
     };
 
@@ -83,7 +88,7 @@ function RTable() {
             setFilteredReservations(prevFiltered =>
                 prevFiltered.filter(reservation => reservation._id !== reservationToClear._id)
             );
-    
+            toast.success('reservation cleared!');
             console.log(`Reservation with ID ${reservationToClear._id} has been deleted.`);
         } catch (error) {
             console.error('Error deleting reservation:', error.response ? error.response.data : error.message);
@@ -103,62 +108,66 @@ function RTable() {
                 />
             </div>
 
-            <div className="rtable-container">
-                <div className="reservation-table">
-                    <table className='rtable-t'>
-                        <thead>
-                            <tr>
-                                {timeSlots.map((timeSlot, index) => (
-                                    <th key={index} className="rtable-header">{timeSlot}</th>
-                                ))}
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                {timeSlots.map((timeSlot, index) => (
-                                    <td key={index} className="rtable-cell">
-                                        {getReservationsForTimeSlot(timeSlot).length > 0 ? (
-                                            getReservationsForTimeSlot(timeSlot).map((reservation, idx) => (
-                                                <div key={idx} className="reservation-item">
-                                                    <p>{reservation.customerName}</p>
-                                                    <div className="reservation-details">
-                                                        <p><MdTableBar className="table-icon" />: {reservation.numberOfTables}</p>
-                                                        <button 
-                                                            className="check-btn"
-                                                            onClick={() => handleClearReservation(reservation)}
-                                                        >
-                                                            <FaCheck className="check-icon" />
-                                                        </button>
+            {loading ? (
+                <Loader /> // Show the loader while data is being fetched
+            ) : (
+                <div className="rtable-container">
+                    <div className="reservation-table">
+                        <table className='rtable-t'>
+                            <thead>
+                                <tr>
+                                    {timeSlots.map((timeSlot, index) => (
+                                        <th key={index} className="rtable-header">{timeSlot}</th>
+                                    ))}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    {timeSlots.map((timeSlot, index) => (
+                                        <td key={index} className="rtable-cell">
+                                            {getReservationsForTimeSlot(timeSlot).length > 0 ? (
+                                                getReservationsForTimeSlot(timeSlot).map((reservation, idx) => (
+                                                    <div key={idx} className="reservation-item">
+                                                        <p>{reservation.customerName}</p>
+                                                        <div className="reservation-details">
+                                                            <p><MdTableBar className="table-icon" />: {reservation.numberOfTables}</p>
+                                                            <button 
+                                                                className="check-btn"
+                                                                onClick={() => handleClearReservation(reservation)}
+                                                            >
+                                                                <FaCheck className="check-icon" />
+                                                            </button>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            ))
-                                        ) : (
-                                            <p>No Reservations</p>
-                                        )}
-                                        <button
-                                            className="reserve-btn"
-                                            onClick={() => handleReserveTable(timeSlot)}
-                                        >
-                                            Reserve Table
-                                        </button>
-                                    </td>
-                                ))}
-                            </tr>
-                        </tbody>
-                    </table>
+                                                ))
+                                            ) : (
+                                                <p>No Reservations</p>
+                                            )}
+                                            <button
+                                                className="reserve-btn"
+                                                onClick={() => handleReserveTable(timeSlot)}
+                                            >
+                                                Reserve Table
+                                            </button>
+                                        </td>
+                                    ))}
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
+            )}
+
             {popupVisible && (
                 <ReservationPopup 
                     showPopup={popupVisible}
                     setPopup={setPopupVisible} 
-                    restaurantDetails={{ restaurantName }} // Pass any necessary restaurant details
-                    selectedTimeSlot={selectedTimeSlot} // Pass selected time slot if needed
-                    selectedDate={selectedDate} // Pass selected date if needed
+                    restaurantDetails={{ restaurantName }}
+                    selectedTimeSlot={selectedTimeSlot}
+                    selectedDate={selectedDate}
                 />
             )}
         </div>
-        
     );
 }
 

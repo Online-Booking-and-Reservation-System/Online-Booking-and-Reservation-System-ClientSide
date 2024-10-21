@@ -1,7 +1,13 @@
+.r-t-container{
+    min-height: 700px;
+    margin-bottom: 200px;
+}
+
 .r-t-container .rtable-container {
     max-height: 500px; /* Set a maximum height for the container */
     overflow-y: auto; /* Enable vertical scrolling */
     position: relative;
+    min-height: 20vh;
     padding: 20px;
     width: 100%;
     background-color: #f9f9f9;
@@ -36,6 +42,7 @@
 }
 
 .rtable-t {
+    min-height: 200px;
     width: 100%;
     border-collapse: collapse;
 }
@@ -142,6 +149,18 @@
     .rtable-cell {
         padding: 20px; /* Adjust padding for smaller screens */
     }
+    .r-t-container{
+        min-height: 61vh;
+        margin-bottom: 800px;
+    }
+
+}
+
+@media (max-width: 912px) {
+    .r-t-container{
+        min-height: 1039px;
+    }
+
 }
 
 @media (max-width: 853px) {
@@ -155,6 +174,10 @@
 
     .date-select{
         font-size: 20px;
+    }
+
+    .r-t-container{
+        min-height: 1039px;
     }
 
     .rtable-cell {
@@ -195,6 +218,15 @@
         padding: 15px; /* Further reduce padding */
         font-size: 0.9rem; /* Slightly smaller font size */
     }
+
+  
+}
+
+@media (min-width: 540px) {
+   .r-t-container{
+    margin-bottom: 10px;
+    min-height: 67vh;
+   }
 }
 
 @media (max-width: 430px) {
@@ -244,6 +276,10 @@
 
     .date-select{
         font-size: 15px;
+    }
+
+    .r-t-container{
+        min-height: 685px;
     }
 
     .rtable-cell {

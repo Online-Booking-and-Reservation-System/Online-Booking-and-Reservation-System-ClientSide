@@ -57,7 +57,7 @@ function Signup({ trigger, closeModal, openSigninPopup }) {
                     <div className='s-popup'>
                         <div className="signup-container">
                             <div className="suTop">
-                                <span className="close-btn" onClick={closeModal}><FontAwesomeIcon icon={faChevronLeft} /></span>
+                                <span className="su-close-btn" onClick={closeModal}><FontAwesomeIcon icon={faChevronLeft} /></span>
                                 <h2 className="su">Let's get you started</h2>
                             </div>
                             <form className="signup" onSubmit={handleSignup}>

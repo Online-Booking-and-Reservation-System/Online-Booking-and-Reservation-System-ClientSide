@@ -6,7 +6,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 999; /* Ensures it's on top */
+    z-index: 999; 
     width: fit-content;
     height: fit-content;
 }
@@ -75,7 +75,6 @@
     cursor: pointer;
 }
 
-/* Responsive styles for smaller devices */
 @media (max-width: 1024px) {
     .c-popup .contact-container {
         width: 1000%;

@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Loader from '../../../components/shared components/Loader/Loader';
-import './RList.css'; // Add corresponding CSS for styling
+import './RList.css'; 
 
 function RList() {
     const [reservations, setReservations] = useState([]);
     const [filteredReservations, setFilteredReservations] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
     const [loading, setLoading] = useState(true);
-    const restaurantName = localStorage.getItem('restaurantName'); // Replace with the actual restaurant name or get it from user context
+    const restaurantName = localStorage.getItem('restaurantName'); 
 
     useEffect(() => {
         fetchReservations();
@@ -30,7 +30,7 @@ function RList() {
         } catch (error) {
             console.error('Error fetching reservations:', error.response ? error.response.data : error.message);
         }finally {
-            setLoading(false); // Stop the loader after data is fetched or error occurs
+            setLoading(false);
         }
     };
 
@@ -38,7 +38,6 @@ function RList() {
         const query = e.target.value;
         setSearchQuery(query);
 
-        // Filter reservations by customer name
         const filtered = reservations.filter((reservation) =>
             reservation.customerName.toLowerCase().includes(query.toLowerCase())
         );
@@ -58,7 +57,7 @@ function RList() {
                     />
                 </div>
                 {loading ? (
-                <Loader /> // Show the loader while loading
+                <Loader /> 
             ) : (
                 <div className="rlist-container">
                     <div className="rlist-inner-container">

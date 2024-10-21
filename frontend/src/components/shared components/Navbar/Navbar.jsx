@@ -4,7 +4,7 @@ import { useState } from "react";
 import Signup from "../../Signup/Signup";
 import Signin from "../../Signin/Signin";
 import Contact from "../Contact Us/Contact";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaUser } from "react-icons/fa";
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -24,11 +24,11 @@ function Navbar() {
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        localStorage.removeItem('token'); // Remove the token
+        localStorage.removeItem('token'); 
         localStorage.removeItem('role');
         localStorage.removeItem('id');
         setIsDropdownOpen(false);
-        navigate('/'); // Redirect to home
+        navigate('/'); 
         toast.success('Successfully signed out!');
     };
 
@@ -43,10 +43,10 @@ function Navbar() {
                 </div>
                 {role && (
                    <div className="menu-icon" onClick={toggleDropdown}>
-                       {isDropdownOpen ? <FaTimes /> : <FaBars />} {/* Change icon based on state */}
+                       {isDropdownOpen ? <FaTimes /> : <FaBars />} 
                    </div>
                 )}
-                {/* Nav Links for wider screens */}
+                
             <ul className="nav-links">
                 {role === 'user' && (
                     <>
@@ -93,7 +93,6 @@ function Navbar() {
                  )}
             </ul>
 
-            {/* Dropdown menu for mobile view (300px to 700px) */}
             {isDropdownOpen && (
                 <ul className="dropdown-menu">
                     {role === 'user' && (
@@ -132,7 +131,7 @@ function Navbar() {
                     )}
                 </ul>
               )}
-                    {/* If no role, show Sign In and Sign Up */}
+                    
                     {!role && (
 
                         <div className="nav-btns">
@@ -157,14 +156,15 @@ function Navbar() {
                 
             </nav>
 
-            {/* Popups for Sign Up, Sign In, and Contact Us */}
             <Contact trigger={contactPopup} closeModal={() => setContactPopup(false)} />
+
             <Signup trigger={suButtonPopup} closeModal={() => setSuButtonPopup(false)}
                 openSigninPopup={() => {
                     setSiButtonPopup(true);
                     setSuButtonPopup(false);
                 }}
             />
+
             <Signin trigger={siButtonPopup} closeModal={() => setSiButtonPopup(false)}
                 openSignupPopup={() => {
                     setSuButtonPopup(true);
@@ -172,7 +172,6 @@ function Navbar() {
                 }}
             />
 
-            {/* Blurring the background when popups are open */}
             <div className={`main-content ${isPopupOpen ? "blurred" : ""}`}>
                 <Outlet />
             </div>

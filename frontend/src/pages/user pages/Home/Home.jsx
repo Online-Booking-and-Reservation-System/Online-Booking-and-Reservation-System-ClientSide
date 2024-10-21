@@ -7,15 +7,19 @@ import { useEffect, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import Loader from '../../../components/shared components/Loader/Loader.jsx'
 function Home() {
-	const [restaurants, setRestaurants] = useState(null);
+	const [restaurants, setRestaurants] = useState([]);
 	const navigate = useNavigate();
 	useEffect(()=>{
 		async function getRestaurants(){
 			try{
 				const res= await axios.get('http://localhost:3000/api/resturants/');
-				setRestaurants(res.data.data.resturants)
+				console.log('API Response:', res.data); // Log the full response
+				setRestaurants(res.data.data.updatedRestaurants);
+				console.log('Restaurants State:', res.data.data.updatedRestaurants); // Log state after setting
 			}
-			catch(err){}
+			catch(err){
+				console.error("Error fetching restaurants:", err);
+			}
 		}
 		getRestaurants();
 	},[]);
@@ -24,8 +28,8 @@ function Home() {
     };
 	return (
 		<>
-		{(restaurants === null) ? (
-			<div className='home-container'>
+{!restaurants || restaurants.length === 0 ? (
+	      <div className='home-container'>
 				<Loader/>	
 			</div>
 		) : (

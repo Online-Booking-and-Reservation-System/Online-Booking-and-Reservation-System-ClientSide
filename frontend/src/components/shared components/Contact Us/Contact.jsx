@@ -1,24 +1,9 @@
 import './Contact.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
 
 function Contact({ trigger, closeModal }) {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // You can implement API call here to send the contact message
-        console.log({
-            name,
-            email,
-            message,
-        });
-        closeModal(); // Close modal after submission
-        alert('Message sent successfully!');
-    };
+   
     return (trigger) ? (
         <div className="popup-overlay">
             <div className="c-popup">

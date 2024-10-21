@@ -8,27 +8,26 @@ import Loader from '../../../components/shared components/Loader/Loader';
 import ReservationPopup from '../../../components/shared components/ReservationPopup/ReservationPopup';
 
 function RTable() {
-    const [reservations, setReservations] = useState([]); // All reservations
-    const [filteredReservations, setFilteredReservations] = useState([]); // Reservations to display
-    const [selectedDate, setSelectedDate] = useState(''); // Selected date
-    const [popupVisible, setPopupVisible] = useState(false); // Popup visibility state
+    const [reservations, setReservations] = useState([]); 
+    const [filteredReservations, setFilteredReservations] = useState([]); 
+    const [selectedDate, setSelectedDate] = useState(''); 
+    const [popupVisible, setPopupVisible] = useState(false); 
     const [selectedTimeSlot, setSelectedTimeSlot] = useState('');
     const [loading, setLoading] = useState(true);
-    const restaurantName = 'Italian Bistro'; // Update this with the actual restaurant name
+    const restaurantName = 'Italian Bistro'; 
 
     const timeSlots = ['10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'];
 
     useEffect(() => {
-        // Fetch reservations from the API when component mounts
         fetchReservations();
     }, []);
 
     const fetchReservations = async () => {
         try {
-            const token = localStorage.getItem('token'); // Adjust based on where you store the token
+            const token = localStorage.getItem('token');
             const response = await axios.get(`http://localhost:3000/api/reservation/reservation/resturant`, {
                 headers: {
-                    Authorization: `Bearer ${token}` // Send the token in the Authorization header
+                    Authorization: `Bearer ${token}`
                 }
             });
             if (response.data && response.data.length > 0) {
@@ -39,7 +38,7 @@ function RTable() {
         } catch (error) {
             console.error('Error fetching reservations:', error.response ? error.response.data : error.message);
         }finally {
-            setLoading(false); // Set loading to false when data is fetched or an error occurs
+            setLoading(false); 
         }
     };
 
@@ -47,16 +46,14 @@ function RTable() {
         const date = e.target.value;
         setSelectedDate(date);
 
-        // Filter reservations based on selected date
         const filtered = reservations.filter(reservation => 
             reservation.reservationDate && reservation.reservationDate.slice(0, 10) === date
         );
 
-        // Update filtered reservations only if a date is selected
         if (date) {
             setFilteredReservations(filtered);
         } else {
-            setFilteredReservations([]); // Clear the filtered reservations if no date is selected
+            setFilteredReservations([]); 
         }
     };
 
@@ -68,20 +65,18 @@ function RTable() {
 
     const handleReserveTable = (time) => {
         console.log(`Reserve table clicked for time: ${time} on date: ${selectedDate}`);
-        setSelectedTimeSlot(time); // Set the selected time slot
-        setPopupVisible(true); // Show the popup
+        setSelectedTimeSlot(time); 
+        setPopupVisible(true); 
      };
 
     const handleClearReservation = async (reservationToClear) => {
         try {
-            // Send a DELETE request to the server to delete the reservation
             await axios.delete(`http://localhost:3000/api/reservation/${reservationToClear._id}`, {
                 headers: {
-                    Authorization: `Bearer ${localStorage.getItem('token')}` // Include the token in the request headers
+                    Authorization: `Bearer ${localStorage.getItem('token')}` 
                 }
             });
     
-            // Update the state to remove the deleted reservation from the lists
             setReservations(prevReservations =>
                 prevReservations.filter(reservation => reservation._id !== reservationToClear._id)
             );
@@ -109,7 +104,7 @@ function RTable() {
             </div>
 
             {loading ? (
-                <Loader /> // Show the loader while data is being fetched
+                <Loader /> 
             ) : (
                 <div className="rtable-container">
                     <div className="reservation-table">

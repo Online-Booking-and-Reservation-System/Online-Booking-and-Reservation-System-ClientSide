@@ -1,122 +1,3 @@
-/* .s-popup{
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    left: 36%;
-    top: 25%;
-}
-
-.signup-container{
-    display: flex;
-    flex-direction: column;
-    width: 350px;
-    height: 400px;
-    padding: 40px;
-    border-radius: 6px;
-    background-color: #ffffff;
-   
-}
-
-.suTop{
-    display: flex;
-    gap: 10px;
-    justify-content: left;
-    color: #2B2B2B;
-    font-size: 12px;
-
-}
-
-.close-btn{
-    font-size: 18px;
-    cursor: pointer;
-    transition: all .3s ease;
-}
-
-.close-btn:hover{
-    color: #F49B33;
-}
-
-.signup{
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    width: 100%;
-}
-
-.su-label{
-    padding-top: 5px;
-    padding-bottom: 5px;
-    color: #5E5E5E;
-}
-
-.signup input{
-    padding-left: 20px;
-    width: 93%;
-    height: 2.3em;
-    border-radius: 4px;
-    border: 1px solid #5E5E5E;
-
-}
-
-.phone{
-    display: flex;
-    width: 100%;
-    gap: 10px;
-}
-
-.phone input{
-    padding-left: 20px;
-    width: 98%;
-    border-radius: 4px;
-}
-
-.flag-img{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-}
-
-.signup-btn2{
-    background-color: #2B2B2B;
-    color: #F49B33;
-    border: 1px solid #2B2B2B;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-top: 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all .4s ease;
-}
-
-.signup-btn2:hover{
-    background-color: #F49B33;
-    color: #2B2B2B;
-    border: 1px solid #F49B33;
-}
-
-.su-bottom{
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin-top: 5px;
-}
-
-.bottom-q{
-    color: #5E5E5E;
-}
-
-.signin-link{
-    color: #F49B33;
-    text-decoration: underline;
-    cursor: pointer;
-    transition: all .3s ease;
-}
-
-.signin-link:hover{
-    color: #2B2B2B;
-} */
-/* Base Styles (for laptops and larger screens) */
 .s-popup {
     display: flex;
     align-items: center;
@@ -124,7 +5,7 @@
     position: fixed;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Overlay for focus */
+    background: rgba(0, 0, 0, 0.5); 
     z-index: 1000;
 }
 
@@ -132,16 +13,15 @@
     position: fixed;
     display: flex;
     flex-direction: column;
-    width: 50%; /* Default width for laptops */
+    width: 50%; 
     max-width: 500px;
     padding: 40px;  
     border-radius: 8px;
     background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
    
 }
 
-/* Top section: Close button and title */
 .suTop {
     display: flex;
     align-items: flex-start;
@@ -163,7 +43,7 @@
 }
 
 .signup-container .su {
-    font-size: 1.3rem; /* Keep the title size suitable for laptops */
+    font-size: 1.3rem; 
     text-align: left;
     align-items: flex-start;
 }
@@ -234,7 +114,6 @@
     border: 1px solid #F49B33;
 }
 
-/* Bottom section (Already a user? link) */
 .su-bottom {
     display: flex;
     justify-content: center;
@@ -259,10 +138,9 @@
 
 /* Media queries for smaller and larger screens */
 
-/* Tablets and smaller screens */
 @media (max-width: 1280px) {
     .signup-container {
-        width: 30%; /* Responsive width for tablets */
+        width: 30%; 
         max-width: 400px;
         padding: 30px;
         height: fit-content;
@@ -273,7 +151,7 @@
     }
 
     .su {
-        font-size: 1.2rem; /* Slightly smaller title for tablets */
+        font-size: 1.2rem; 
     }
     
     .close-btn {
@@ -296,7 +174,7 @@
 
 @media (max-width: 1024px) {
     .popup-overlay .s-popup .signup-container {
-        width: 50%; /* Responsive width for tablets */
+        width: 50%; 
         max-width: 400px;
         padding: 40px;
         height: fit-content;
@@ -309,7 +187,7 @@
     }
 
     .popup-overlay .s-popup .signup-container  .su {
-        font-size: 1.2rem; /* Slightly smaller title for tablets */
+        font-size: 1.2rem; 
     }
     
     .popup-overlay .s-popup .signup-container .close-btn {
@@ -360,7 +238,7 @@
 
 @media (max-width: 912px) {
     .popup-overlay .s-popup .signup-container {
-        width: 45%; /* Responsive width for tablets */
+        width: 45%; 
         max-width: 500px;
         padding: 30px;
         height: fit-content;
@@ -371,7 +249,7 @@
     }  
 
     .s-popup .suTop .su {
-        font-size: 1.4rem; /* Slightly smaller title for tablets */
+        font-size: 1.4rem; 
     }
     
     .s-popup .suTop .close-btn {
@@ -419,7 +297,7 @@
 
 @media (max-width: 853px) {
     .s-popup .signup-container {
-        width: 20%; /* Responsive width for tablets */
+        width: 20%; 
         max-width: 350px;
         padding: 30px;
         height: fit-content;
@@ -430,7 +308,7 @@
     }
 
     .suTop .su {
-        font-size: 1.5rem; /* Slightly smaller title for tablets */
+        font-size: 1.5rem; 
     }
     
     .close-btn {
@@ -467,18 +345,18 @@
     }
    
 }
-/* Mobile phones */
+
 @media (max-width: 768px) {
     .s-popup .signup-container .suTop {
-        font-size: 1rem; /* Smaller font for mobile */
+        font-size: 1rem; 
     }
 
     .su {
-        font-size: 1.3rem; /* Mobile-friendly title size */
+        font-size: 1.3rem; 
     }
 
     .s-popup .signup-container .signup .su-input {
-        height: 2.3em; /* Adjust input height for mobile */
+        height: 2.3em; 
         width: 100%;
     }
 
@@ -488,14 +366,13 @@
 
     .flag-img {
         width: 25px;
-        height: 25px; /* Slightly smaller flag for mobile */
+        height: 25px;
     }
 }
 
-/* Extra-large screens (e.g., desktop monitors) */
 @media (min-width: 1440px) {
     .signup-container {
-        width: 450px; /* Wider for large screens */
+        width: 450px; 
         padding: 50px;
     }
 
@@ -504,11 +381,11 @@
     }
 
     .su {
-        font-size: 1.8rem; /* Larger title for big screens */
+        font-size: 1.8rem; 
     }
 
     .signup-btn2 {
-        padding: 1rem; /* Larger button on bigger screens */
+        padding: 1rem; 
     }
 
     .signup input {
@@ -518,7 +395,7 @@
 
 @media (max-width: 540px) {
     .signup-container {
-        width: 50%; /* Wider for large screens */
+        width: 50%; 
         padding: 40px;
     }
 
@@ -528,7 +405,7 @@
     }
 
     .su {
-        font-size: 1.2rem; /* Slightly smaller title for tablets */
+        font-size: 1.2rem; 
     }
     
     .close-btn {
@@ -567,7 +444,7 @@
 
 @media (min-width: 412px) {
     .popup-overlay .s-popup .signup-container {
-        width: 60%; /* Wider for large screens */
+        width: 60%; 
         max-width: 400px;
         padding: 30px;
         height: fit-content;
@@ -639,7 +516,7 @@
 
 @media (min-width: 360px) {
     .popup-overlay .s-popup .signup-container {
-        width: 60%; /* Wider for large screens */
+        width: 60%; 
         max-width: 300px;
         padding-top: 30px;
         height: fit-content;
@@ -658,7 +535,7 @@
     }
 
     .popup-overlay .s-popup .signup-container .suTop .su {
-        font-size: .9rem; /* Slightly smaller title for tablets */
+        font-size: .9rem; 
     }
     
     .popup-overlay .s-popup .signup-container .suTop .close-btn {
@@ -709,7 +586,7 @@
 
 @media (min-width: 344px) {
     .s-popup .signup-container {
-        width: 60%; /* Wider for large screens */
+        width: 60%; 
         max-width: 300px;
         padding-top: 30px;
         height: fit-content;
@@ -729,7 +606,7 @@
     }
 
     .suTop .su {
-        font-size: .9rem; /* Slightly smaller title for tablets */
+        font-size: .9rem; 
     }
     
     .suTop .close-btn {

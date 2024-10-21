@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
+import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -25,7 +25,7 @@ function Signin({ trigger, closeModal, openSignupPopup }) {
             const rName = decodedToken.restaurantName;
             const id = decodedToken.id;
            closeModal();
-          console.log(decodedToken);
+         //   console.log(decodedToken);
 
          
            localStorage.setItem('token', token);
@@ -34,7 +34,7 @@ function Signin({ trigger, closeModal, openSignupPopup }) {
            toast.success('sign in successful!')
           //  console.log('Signed in successfully:', response);
        } catch (error) {
-           console.error('Error signing in:', error.response?.data || error.message);
+         //   console.error('Error signing in:', error.response?.data || error.message);
            toast.error('Error signing in, please try again.');
        }
    };

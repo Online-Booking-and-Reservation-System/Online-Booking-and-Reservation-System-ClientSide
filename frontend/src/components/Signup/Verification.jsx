@@ -8,7 +8,6 @@ function Verification({ token, closeVerification }) {
     const [error, setError] = useState("");
     const [verificationMessage, setVerificationMessage] = useState('');
 
-    // Check token expiration
     const isTokenExpired = (token) => {
         try {
             const decodedToken = JSON.parse(atob(token.split('.')[1])); 
@@ -24,7 +23,7 @@ function Verification({ token, closeVerification }) {
 
     const handleVerification = async (e) => {
         e.preventDefault();
-        const token = localStorage.getItem('token'); // Retrieve token
+        const token = localStorage.getItem('token'); 
         
          if (isTokenExpired(token)) {
              console.log("Token has expired.");

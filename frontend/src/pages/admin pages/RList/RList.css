@@ -13,12 +13,12 @@
     border-radius: 4px;
     border: 1px solid #5E5E5E;
     margin-left: 10px;
-    box-sizing: border-box; /* Include padding and border in width */
+    box-sizing: border-box; 
 }
 
 .rlist-container {
-    max-height: 500px; /* Set a maximum height for the container */
-    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 500px; 
+    overflow-y: auto; 
     position: relative;
     padding: 20px;
     width: 100%;
@@ -29,9 +29,9 @@
 }
 
 .rlist-inner-container {
-    overflow-y: auto; /* Enable vertical scrolling */
-    max-height: 350px; /* Set a maximum height for the container */
-    direction: rtl; /* Make the content flow from right to left */
+    overflow-y: auto;
+    max-height: 350px; 
+    direction: rtl; 
 }
 
 .rlist-container::-webkit-scrollbar {
@@ -61,13 +61,11 @@
     direction: ltr; 
 }
 
-/* Styling for the table */
 .rlist-table {
     width: 100%;
     border-collapse: collapse;
 }
 
-/* Table header */
 .rlist-thead {
     background-color: #494949;
     color: #fff;
@@ -135,7 +133,7 @@
     }
 
     #customer-search {
-        width: 30%; /* Adjust width for tablets */
+        width: 30%;
         height: 2em;
     }
 
@@ -144,7 +142,7 @@
     }
 
     .rlist-header, .rlist-data {
-        font-size: 0.7rem; /* Slightly smaller font size */
+        font-size: 0.7rem; 
     }
 }
 
@@ -154,7 +152,7 @@
     }
 
     #customer-search {
-        width: 30%; /* Adjust width for tablets */
+        width: 30%; 
         height: 2em;
     }
 
@@ -168,7 +166,7 @@
     }
 
     .rlist-header, .rlist-data {
-        font-size: 0.65rem; /* Slightly smaller font size */
+        font-size: 0.65rem; 
     }
 }
 
@@ -211,7 +209,7 @@
     }
 
     #customer-search {
-        width: 30%; /* Adjust width for tablets */
+        width: 30%; 
         height: 2em;
     }
 
@@ -220,7 +218,7 @@
 
     }
     .rlist-header, .rlist-data {
-        font-size: 0.65rem; /* Slightly smaller font size */
+        font-size: 0.65rem; 
     }
 }
 
@@ -231,7 +229,7 @@
     }
 
     #customer-search {
-        width: 40%; /* Almost full width for narrower mobile devices */
+        width: 40%; 
         padding: 10px;
         font-size: 11px;
     }
@@ -241,7 +239,7 @@
     }
 
     .search-r {
-        font-size: 14px; /* Slightly smaller font for the smallest devices */
+        font-size: 14px; 
     }
 }
 
@@ -252,13 +250,13 @@
     }
 
     #customer-search {
-        width: 40%; /* Almost full width for narrower mobile devices */
+        width: 40%; 
         padding: 10px;
         font-size: 11px;
     }
 
     .search-r {
-        font-size: 14px; /* Slightly smaller font for the smallest devices */
+        font-size: 14px; 
     }
 }
 
@@ -269,13 +267,13 @@
     }
 
     #customer-search {
-        width: 40%; /* Almost full width for narrower mobile devices */
+        width: 40%; 
         padding: 10px;
         font-size: 11px;
     }
 
     .search-r {
-        font-size: 14px; /* Slightly smaller font for the smallest devices */
+        font-size: 14px; 
     }
 }
 
@@ -286,13 +284,13 @@
     }
 
     #customer-search {
-        width: 40%; /* Almost full width for narrower mobile devices */
+        width: 40%; 
         padding: 10px;
         font-size: 11px;
     }
 
     .search-r {
-        font-size: 14px; /* Slightly smaller font for the smallest devices */
+        font-size: 14px; 
     }
 
     .rlist-inner-container{
@@ -312,13 +310,13 @@
     }
 
     .search-filter #customer-search {
-        width: 45%; /* Almost full width for narrower mobile devices */
+        width: 45%; 
         padding: 10px;
         font-size: 10px;
     }
 
     .search-filter .search-r {
-        font-size: 14px; /* Slightly smaller font for the smallest devices */
+        font-size: 14px; 
     }
 
     .rlist-container{
@@ -328,7 +326,7 @@
 
 @media (max-width: 375px) {
     .search-r {
-        font-size: 14px; /* Slightly smaller font for the smallest devices */
+        font-size: 14px; 
     }
 }
 
@@ -339,13 +337,13 @@
     }
 
     #customer-search {
-        width: 40%; /* Almost full width for narrower mobile devices */
+        width: 40%; 
         padding: 10px;
         font-size: 11px;
     }
 
     .search-r {
-        font-size: 14px; /* Slightly smaller font for the smallest devices */
+        font-size: 14px; 
     }
 }
 
@@ -356,12 +354,12 @@
     }
 
     #customer-search {
-        width: 40%; /* Almost full width for narrower mobile devices */
+        width: 40%; 
         padding: 10px;
         font-size: 11px;
     }
 
     .search-r {
-        font-size: 14px; /* Slightly smaller font for the smallest devices */
+        font-size: 14px; 
     }
 }

@@ -15,7 +15,7 @@ function Reservation() {
 
     const fetchReservations = async () => {
         try {
-            const token = localStorage.getItem('token'); // Adjust token retrieval if needed
+            const token = localStorage.getItem('token'); 
             const response = await axios.get(`http://localhost:3000/api/reservation/customer`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -29,7 +29,7 @@ function Reservation() {
             console.error('Error fetching reservations:', error.response ? error.response.data : error.message);
             setError('Error fetching reservations. Please try again later.');
         } finally {
-            setLoading(false); // Set loading to false once data is fetched (or if there’s an error)
+            setLoading(false); 
         }
     };
 
@@ -37,7 +37,7 @@ function Reservation() {
         <div className="reservation-container">
             <div className="r-inner-container">
                 {loading ? (
-                    <Loader /> // Replace text-based loader with your Loader component
+                    <Loader /> 
                 ) : error ? (
                     <p className="error">{error}</p>
                 ) : (

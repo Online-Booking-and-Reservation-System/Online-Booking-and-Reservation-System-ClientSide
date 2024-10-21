@@ -4,8 +4,8 @@
 }
 
 .r-t-container .rtable-container {
-    max-height: 500px; /* Set a maximum height for the container */
-    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 500px; 
+    overflow-y: auto; 
     position: relative;
     min-height: 20vh;
     padding: 20px;
@@ -57,7 +57,7 @@
 }
 
 .rtable-cell {
-    width: 150px; /* Fixed width */
+    width: 150px; 
     padding: 30px;
     border: 1px solid #ccc;
     vertical-align: top;
@@ -144,10 +144,10 @@
 /* Media Queries for Responsiveness */
 @media (max-width: 1024px) {
     .date-input {
-        width: 50%; /* Adjust width for tablets */
+        width: 50%; 
     }
     .rtable-cell {
-        padding: 20px; /* Adjust padding for smaller screens */
+        padding: 20px; 
     }
     .r-t-container{
         min-height: 61vh;
@@ -169,7 +169,7 @@
     }
 
     .date-input {
-        width: 70%; /* Wider for smaller tablets */
+        width: 70%;
     }
 
     .date-select{
@@ -181,8 +181,8 @@
     }
 
     .rtable-cell {
-        padding: 15px; /* Further reduce padding */
-        font-size: 0.9rem; /* Slightly smaller font size */
+        padding: 15px; 
+        font-size: 0.9rem; 
     }
 }
 
@@ -192,7 +192,7 @@
     }
 
     .date-input {
-        width: 70%; /* Wider for smaller tablets */
+        width: 70%; 
     }
 
     .date-select{
@@ -200,14 +200,14 @@
     }
 
     .rtable-cell {
-        padding: 15px; /* Further reduce padding */
-        font-size: 0.9rem; /* Slightly smaller font size */
+        padding: 15px; 
+        font-size: 0.9rem; 
     }
 }
 
 @media (max-width: 768px) {
     .date-input {
-        width: 70%; /* Wider for smaller tablets */
+        width: 70%; 
     }
 
     .date-select{
@@ -215,8 +215,8 @@
     }
 
     .rtable-cell {
-        padding: 15px; /* Further reduce padding */
-        font-size: 0.9rem; /* Slightly smaller font size */
+        padding: 15px; 
+        font-size: 0.9rem; 
     }
 
   
@@ -235,7 +235,7 @@
     }
 
     .date-input {
-        width: 60%; /* Adjust width for very small devices */
+        width: 60%; 
     }
 
     .date-select{
@@ -243,7 +243,7 @@
     }
 
     .rtable-cell {
-        font-size: 0.75rem; /* Smallest font size */
+        font-size: 0.75rem; 
     }
 }
 
@@ -253,7 +253,7 @@
     }
 
     .date-input {
-        width: 50%; /* Adjust width for very small devices */
+        width: 50%; 
     }
 
     .date-select{
@@ -261,7 +261,7 @@
     }
 
     .rtable-cell {
-        font-size: 0.75rem; /* Smallest font size */
+        font-size: 0.75rem; 
     }
 }
 
@@ -271,7 +271,7 @@
     }
 
     .date-input {
-        width: 50%; /* Adjust width for very small devices */
+        width: 50%; 
     }
 
     .date-select{
@@ -283,7 +283,7 @@
     }
 
     .rtable-cell {
-        font-size: 0.75rem; /* Smallest font size */
+        font-size: 0.75rem; 
     }
 }
 
@@ -293,7 +293,7 @@
     }
 
     .date-input {
-        width: 60%; /* Adjust width for very small devices */
+        width: 60%; 
     }
 
     .date-select{
@@ -301,7 +301,7 @@
     }
 
     .rtable-cell {
-        font-size: 0.75rem; /* Smallest font size */
+        font-size: 0.75rem; 
     }
 }
 
@@ -313,7 +313,7 @@
     }
 
     .date-filter .date-input {
-        width: 60%; /* Adjust width for very small devices */
+        width: 60%;
     }
 
     .date-select{
@@ -321,7 +321,7 @@
     }
 
     .rtable-cell {
-        font-size: 0.75rem; /* Smallest font size */
+        font-size: 0.75rem; 
     }
 }
 
@@ -333,7 +333,7 @@
     }
 
     .date-filter .date-input {
-        width: 55%; /* Adjust width for very small devices */
+        width: 55%; 
     }
 
     .date-select{
@@ -341,7 +341,7 @@
     }
 
     .rtable-cell {
-        font-size: 0.75rem; /* Smallest font size */
+        font-size: 0.75rem; 
     }
 }
 
@@ -352,7 +352,7 @@
     }
 
     .date-filter .date-input {
-        width: 55%; /* Adjust width for very small devices */
+        width: 55%; 
     }
 
     .date-select{
@@ -360,6 +360,6 @@
     }
 
     .rtable-cell {
-        font-size: 0.75rem; /* Smallest font size */
+        font-size: 0.75rem; 
     }
 }

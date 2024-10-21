@@ -31,11 +31,11 @@ function Signup({ trigger, closeModal, openSigninPopup }) {
                 phoneNumber,
                 password,
             });
-            console.log('Signup response:', response.data);
+            // console.log('Signup response:', response.data);
             const token = response.data.data; 
-            console.log('Token:', token);
+            // console.log('Token:', token);
             setToken(token); 
-            // const role = decodedToken.role; // Extract the role from the token
+            // const role = decodedToken.role; 
             // console.log('Role:', role);
             localStorage.setItem('token', token);
             // localStorage.setItem('role', role); 
@@ -43,7 +43,7 @@ function Signup({ trigger, closeModal, openSigninPopup }) {
             closeModal(); 
             toast.success('Check your email for the verification code.');
         } catch (error) {
-            console.error('Error signing up:', error.response?.data || error.message);
+            // console.error('Error signing up:', error.response?.data || error.message);
             toast.error('Error signing up, please try again.');
         }
     };
@@ -103,8 +103,8 @@ function Signup({ trigger, closeModal, openSigninPopup }) {
                                 <p className="bottom-q">Already a user?</p>
                                 <p className="signin-link" 
                                    onClick={() => {
-                                    closeModal();        // Close Signup popup
-                                    openSigninPopup();   // Open Signin popup
+                                    closeModal();        
+                                    openSigninPopup();   
                                 }}>
                                     Signin
                                 </p>
